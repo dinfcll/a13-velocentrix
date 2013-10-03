@@ -227,7 +227,9 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333333;
-  background-color: #ffffff;
+    background-image:url("../img/body7.png");
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
 }
 
 a {
@@ -389,8 +391,8 @@ a:focus {
 }
 
 .row-fluid {
-  width: 100%;
   *zoom: 1;
+  width:100%;
 }
 
 .row-fluid:before,
@@ -632,8 +634,6 @@ a:focus {
 }
 
 .container-fluid {
-  margin-left: 10%;
-  margin-right: 10%;
   padding-bottom: 20px;
   padding-top: 20px;
   padding-right: 20px;
@@ -6214,23 +6214,27 @@ background-color:#88a65e;
 }
 html,body{
     height:100%;
-    background-image:url("../img/body7.png");
-    background-repeat: repeat-x;
-    background-size: 100% 100%;
 }
-.foot-fixed-bottom {
-    bottom: 0;
-    display: block;
-    left: 0;
-    margin-bottom: 0px;
-    margin-top:5%;
-    right: 0;
-    height:15%;
 
+
+.contenu
+{
+    margin-left:10%;
+    margin-right: 10%;
 }
-.foot-fixed-bottom .container-fluid {
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    margin: 0px auto -60px;
+    margin-top: 0px;
+    margin-right-value: auto;
+    margin-bottom: -60px;
+    margin-left-value: auto;
+    margin-left-ltr-source: physical;
+    margin-left-rtl-source: physical;
+    margin-right-ltr-source: physical;
+    margin-right-rtl-source: physical;
+}
+#push, #footer {
     background-color: rgba(0, 0, 0, 0.8);
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 2px;
 }
