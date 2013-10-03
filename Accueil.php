@@ -1,11 +1,11 @@
 
-    <html>   
+    <html>
     <head>   
     <meta charset="utf-8">     
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">   
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
     </head>  
-    <body> 
+    <body>
 	<?php
 		include("Header.html");
 	?>
@@ -38,6 +38,7 @@
 			</div>
 		</div>
 </div>
+
 <?php
 include("Footer.html")
 ?>

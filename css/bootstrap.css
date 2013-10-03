@@ -632,9 +632,14 @@ a:focus {
 }
 
 .container-fluid {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-bottom: 20px;
+  padding-top: 20px;
   padding-right: 20px;
   padding-left: 20px;
   *zoom: 1;
+
 }
 
 .container-fluid:before,
@@ -4366,6 +4371,8 @@ input[type="submit"].btn.btn-mini {
   *position: relative;
   *z-index: 2;
   margin-bottom: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
   overflow: visible;
 }
 
@@ -6125,7 +6132,7 @@ a.badge:focus {
   font-weight: 200;
   line-height: 30px;
   color: inherit;
-  background-color: #eeeeee;
+
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
@@ -6194,7 +6201,7 @@ a.badge:focus {
      -moz-border-radius: 8px;
           border-radius: 8px;
 }
-.commanditaire{­
+.commanditaire{
 	background-color: #0A7A06;
 	h2 {color:#ffffff;}
 }
@@ -6205,4 +6212,25 @@ height:30%;
 #SideBar{
 background-color:#88a65e;
 }
+html,body{
+    height:100%;
+    background-image:url("../img/body7.png");
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+}
+.foot-fixed-bottom {
+    bottom: 0;
+    display: block;
+    left: 0;
+    margin-bottom: 0px;
+    margin-top:5%;
+    right: 0;
+    height:15%;
 
+}
+.foot-fixed-bottom .container-fluid {
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2px;
+}
