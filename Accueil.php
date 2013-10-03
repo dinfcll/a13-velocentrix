@@ -4,12 +4,7 @@
         <meta charset="utf-8">
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <script src="twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/jquery.js"></script>
-        <script src="twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-carousel.js"></script>
-        <script src="twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-transition.js"></script>
-        <script>
-            $('#Carousel').carousel({ interval: 3000 })
-        </script>
+
     </head>
 
     <body>
@@ -55,7 +50,12 @@
         <?php
             include("Footer.html")
         ?>
-
+    <script src="twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/jquery.js"></script>
+    <script src="twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-carousel.js"></script>
+    <script src="twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-transition.js"></script>
+    <script>
+        $('#Carousel').carousel({ interval: 3000 })
+    </script>
 
     </body>  
 </html>
