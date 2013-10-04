@@ -227,9 +227,9 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333333;
-    background-image:url("../img/body7.png");
-    background-repeat: repeat-x;
-    background-size: 100% 100%;
+    background-image:url("../img/body11.png");
+
+    /*background-size: 100% 100%;*/
 }
 
 a {
@@ -6221,6 +6221,8 @@ html,body{
 {
     margin-left:10%;
     margin-right: 10%;
+    padding: 20px;
+    background-color: #ffffff;
 }
 #wrap {
     min-height: 100%;
