@@ -39,8 +39,36 @@
 			        <div class="span3">
 				        <div id="SideBar">
 					        <center><p1><font color="white">Actualités</font></p1></center>
-				        </div>
+                        </div>
+                            <p>Il y a du nouveau à Vélocentrix</p>
+                            <p>Ceci est l'actualité, oui oui l'actualité</p>
+                            <p>Quand on en rajoute</p>
+                            <p>Pinpin et ponpon sont des pimpon</p>
 			        </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <Center><h3>---- Nouvel Événement 36 Octobre 2019 ----</h3></center>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <center><p>Évenement à ne pas manquer.Velocentrix akfasdklfhdjkshghdfkghdfjkghdfjkghfdhgjkdf</p>
+                        <a href="#"><button type="button" class="btn btn-primary"><i class="icon-cogs icon-large">Inscription</i></button></a>
+                        </center>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <Center><h3>---- Nouvel Événement 59 Septembre 2019 ----</h3></center>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <center><p>Évenement à ne pas manquer.Velocentrix akfasdklfhdjkshghdfkghdfjkghdfjkghfdhgjkdf</p>
+                        <a href="#"><button type="button" class="btn btn-primary"><i class="icon-cogs icon-large">Inscription</i></button></a>
+                        </center>
+                    </div>
                 </div>
 		    </div>
 
