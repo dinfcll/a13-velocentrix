@@ -46,6 +46,7 @@
                             <p>Pinpin et ponpon sont des pimpon</p>
 			        </div>
                 </div>
+                <div style="background-image: url('img/body11.png'); border-radius: 5px;padding-bottom: 20px">
                 <div class="row-fluid">
                     <div class="span12">
                         <Center><h3>---- Nouvel Événement 36 Octobre 2019 ----</h3></center>
@@ -54,7 +55,7 @@
                 <div class="row-fluid">
                     <div class="span12">
                         <center><p>Évenement à ne pas manquer.Velocentrix akfasdklfhdjkshghdfkghdfjkghdfjkghfdhgjkdf</p>
-                        <a href="#"><button type="button" class="btn btn-primary"><i class="icon-cogs icon-large">Inscription</i></button></a>
+                        <a href="#"><button type="button" class="btn btn-primary"><i class="icon-road icon-large">Inscription</i></button></a>
                         </center>
                     </div>
                 </div>
@@ -66,9 +67,10 @@
                 <div class="row-fluid">
                     <div class="span12">
                         <center><p>Évenement à ne pas manquer.Velocentrix akfasdklfhdjkshghdfkghdfjkghdfjkghfdhgjkdf</p>
-                        <a href="#"><button type="button" class="btn btn-primary"><i class="icon-cogs icon-large">Inscription</i></button></a>
+                        <a href="#"><button type="button" class="btn btn-primary"><i class="icon-road icon-large">Inscription</i></button></a>
                         </center>
                     </div>
+                </div>
                 </div>
 		    </div>
 
