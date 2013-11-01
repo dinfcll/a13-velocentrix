@@ -6209,9 +6209,16 @@ a.badge:focus {
 width:80%;
 height:30%;
 }
-#SideBar{
+#SideBarfirst{
 background-color:#88a65e;
+margin-bottom: 20px;
 }
+#SideBar{
+    background-color:#88a65e;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 html,body{
     height:100%;
 }
