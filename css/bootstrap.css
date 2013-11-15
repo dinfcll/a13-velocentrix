@@ -3208,19 +3208,19 @@ button.close {
   *margin-left: .3em;
   font-size: 14px;
   line-height: 20px;
-  color: #333333;
+  color: #88a65e;
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   vertical-align: middle;
   cursor: pointer;
-  background-color: #f5f5f5;
-  *background-color: #e6e6e6;
-  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
-  background-repeat: repeat-x;
+  background-color: #88a65e;
+  *background-color: #88a65e;
+  /*background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);*/
+  /*background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));*/
+  /*background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);*/
+  /*background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);*/
+  /*background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);*/
+  /*background-repeat: repeat-x;*/
   border: 1px solid #cccccc;
   *border: 0;
   border-color: #e6e6e6 #e6e6e6 #bfbfbf;
@@ -3244,8 +3244,8 @@ button.close {
 .btn.disabled,
 .btn[disabled] {
   color: #333333;
-  background-color: #e6e6e6;
-  *background-color: #d9d9d9;
+  background-color: #18512E;
+  *background-color: #18512E;
 }
 
 .btn:active,
@@ -3365,14 +3365,14 @@ input[type="button"].btn-block {
 .btn-primary {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #006dcc;
-  *background-color: #0044cc;
-  background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
-  background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
-  background-image: -o-linear-gradient(top, #0088cc, #0044cc);
-  background-image: linear-gradient(to bottom, #0088cc, #0044cc);
-  background-repeat: repeat-x;
+  background-color: #88a65e;
+  *background-color: #88a65e;
+  /*background-image: -moz-linear-gradient(top, #0088cc, #0044cc);*/
+  /*background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));*/
+  /*background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);*/
+  /*background-image: -o-linear-gradient(top, #0088cc, #0044cc);*/
+  /*background-image: linear-gradient(to bottom, #0088cc, #0044cc);*/
+  /*background-repeat: repeat-x;*/
   border-color: #0044cc #0044cc #002a80;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
@@ -3386,8 +3386,8 @@ input[type="button"].btn-block {
 .btn-primary.disabled,
 .btn-primary[disabled] {
   color: #ffffff;
-  background-color: #0044cc;
-  *background-color: #003bb3;
+  background-color: #18512E;
+  *background-color: #18512E;
 }
 
 .btn-primary:active,
@@ -6203,7 +6203,10 @@ a.badge:focus {
 }
 .commanditaire{
 	background-color: #0A7A06;
-	h2 {color:#ffffff;}
+}
+
+.commanditaire h2 {
+    color:#ffffff;
 }
 #map_canvas{
 width:80%;
@@ -6234,10 +6237,10 @@ html,body{
 #wrap {
     min-height: 100%;
     height: auto !important;
-    margin: 0px auto -60px;
+    margin: 0px auto 60px;
     margin-top: 0px;
     margin-right-value: auto;
-    margin-bottom: -60px;
+    margin-bottom: 60px;
     margin-left-value: auto;
     margin-left-ltr-source: physical;
     margin-left-rtl-source: physical;
