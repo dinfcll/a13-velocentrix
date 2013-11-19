@@ -57,6 +57,17 @@
                         <li><form action="Administration.php" method="POST"><input  type="hidden" name="Query" value="Informations"/><input id="boutonadmin" type="submit" name="Informations" value="Informations"/></form></li><br/>
                         <li><form action="Administration.php" method="POST"><input  type="hidden" name="Query" value="Footer"/><input id="boutonadmin" type="submit" name="Footer" value="Footer"/></form></li>
                     </ul>
+
+                    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+                    <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+                    <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+                    <a class="fancybox" rel="group" href="img/administration.jpg"><img src="img/administration.jpg" alt="" /></a>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            $(".fancybox").fancybox();
+                        });
+                    </script>
+
                 </div>
             </div>
         </div>
