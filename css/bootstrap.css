@@ -6221,7 +6221,11 @@ margin-bottom: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
+#access{
+    background-color: #8C2318;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 html,body{
     height:100%;
 }
@@ -6252,4 +6256,20 @@ html,body{
 }
 #boutonadmin{
     width: 100%;
+    color: #ffffff;
+    background-color: #0081c2;
+    background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
+    background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+    background-image: -o-linear-gradient(top, #0088cc, #0077b3);
+    background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+    background-repeat: repeat-x;
+    outline: 0;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+}
+#boutonadmin input{
+   color: #ffffff;
+}
+#listeadmin{
+    margin-bottom: 30px;
 }
