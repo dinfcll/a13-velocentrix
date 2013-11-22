@@ -28,11 +28,11 @@
 
         ?>
         <div class="contenu border-radius">
+            <?php echo "<center>".$row['Titre']."</center>" ?>
             <div class="row-fluid">
-                <?php echo "<center>".$row['Titre']."</center>" ?>
-                    <div class="span9"><?php echo $row['Titre'].$row['Paragraphe'] ?>
+                    <div class="span8"><?php echo $row['Titre'].$row['Paragraphe'] ?>
                     </div>
-                <div class="span3">
+                <div class="span4">
                     <center><img width="100%" src="img/Benevolat.jpg"/></center>
                 </div>
             </div>
