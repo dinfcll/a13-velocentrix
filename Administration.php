@@ -40,7 +40,6 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     mysql_query($query);
                 }
             }
-            else{
                 if($_POST['ajoutertable'])
                 {
                     if($_POST['nom'] && $_POST['mot de passe'])
@@ -78,7 +77,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     {
                         $query = "UPDATE $table SET Password='$Nouveau' WHERE Utilisateur='$Utilisateur'";
                     }
-                }
+
             }
             echo "<center><h3>".$_POST['Query']."</h3></center>";
             echo "<div class='row-fluid'>";
