@@ -30,24 +30,11 @@
         <div class="contenu border-radius">
             <div class="row-fluid">
                 <div class="span9">
-                    <center><img width="100%" src="img/benevolat.jpg"/></center>
+                    <div class="span9"><?php echo $row['Titre'].$row['Paragraphe'] ?>
+                    </div>
                 </div>
                 <div class="span3">
-                    <div id="SideBarfirst">
-                        <center><p1><font color="white">Ateliers</font></p1></center>
-                    </div>
-                    <p>Il y a du nouveau à Vélocentrix</p>
-                    <p>Ceci est l'actualité, oui oui l'actualité</p>
-                    <p>Quand on en rajoute</p>
-                    <p>Pinpin et ponpon sont des pimpon</p>
-                    <div id="SideBar">
-                        <center><p1><font color="white">Été 2013</font></p1></center>
-                    </div>
-
-                </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span9"><?php echo $row['Titre'].$row['Paragraphe'] ?>
+                    <center><img width="100%" src="img/Benevolat.jpg"/></center>
                 </div>
             </div>
         </div>
