@@ -29,9 +29,7 @@
         ?>
         <div class="contenu border-radius">
             <div class="row-fluid">
-                <div class="span5"><?php echo $row['Titre'].$row['Paragraphe'] ?>
-                </div>
-                <div class="span4">
+                <div class="span9">
                     <img src="img/benevolat.jpg"/>
                 </div>
                 <div class="span3">
@@ -46,6 +44,10 @@
                         <center><p1><font color="white">Été 2013</font></p1></center>
                     </div>
 
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span9"><?php echo $row['Titre'].$row['Paragraphe'] ?>
                 </div>
             </div>
         </div>
