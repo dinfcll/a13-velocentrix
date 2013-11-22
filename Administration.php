@@ -10,6 +10,16 @@
 </head>
 
 <body>
+<?php
+$host = "localhost";
+$user = "equipe2";
+$password = "equipe2abc";
+$bd = "a13equipe2";
+
+mysql_connect($host,$user,$password) or die ("Impossible de se connecter");
+mysql_select_db($bd) or die ("Impossible de se connecter à la base de données");
+
+?>
 <div id="wrap">
     <div class="container-fluid">
         <?php
@@ -17,6 +27,11 @@
         ?>
         <div class="contenu border-radius">
             <?php
+            if($_POST['modif'])
+            {   $table = $_POST['modif'];
+                $query = "UPDATE $table SET ='$contenu' WHERE idContenu=1";
+                mysql_query($query);
+            }
             echo "<center><h3>".$_POST['Query']."</h3></center>";
             echo "<div class='row-fluid'>";
             if($_POST['Query'] == "Gestion des accès administrateurs")
@@ -50,23 +65,31 @@
             }
             elseif($_POST['Query'])
                 {
+                    $table = $_POST['Query'];
+                    $query = "SELECT * FROM $table";
+                    $result = mysql_query($query);
+                    $row = mysql_fetch_array($result);
                     echo "<div class='span4'>";
                     echo "<h5>Titre</h5>";
-                       echo "<textarea cols='80' id='editor1' name='editor1' rows='10'>";
+                    echo "<form action='Administration.php' method='POST'>";
+                       echo "<textarea cols='80' id='editor1' name='editor1' rows='10' value='".$row['Titre']."'>";
                         echo "</textarea>";
                         echo "<script>";
                 echo "CKEDITOR.replace( 'editor1' );";
                         echo "</script>";
                     echo"<center><input style='margin-top: 30px' class='btn' id='boutonadmin' type='submit' name='modifiertitre' value='Modifier le contenu'/></center>";
+                    echo"<input  type='hidden' name='Modif' value='".$table."'/></form>";
                     echo "</div>";
                     echo "<div class='span5'>";
                     echo "<h5>Paragraphe</h5>";
-                    echo "<textarea cols='80' id='editor2' name='editor2' rows='10'>";
+                    echo "<form action='Administration.php' method='POST'>";
+                    echo "<textarea cols='80' id='editor2' name='editor2' rows='10' value='".$row['Paragraphe']."'>";
                     echo "</textarea>";
                     echo "<script>";
                     echo "CKEDITOR.replace( 'editor2' );";
                     echo "</script>";
                     echo"<center><input style='margin-top: 30px' class='btn' id='boutonadmin' type='submit' name='modifierpara' value='Modifier le contenu'/></center>";
+                    echo"<input  type='hidden' name='Modif' value='".$table."'/></form>";
                     echo "</div>";
                 }
                 else{
