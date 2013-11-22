@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
+
+
 
     </head>
 
@@ -57,10 +60,25 @@
 				        <div id="SideBarfirst">
 					        <center><p1><font color="white">Actualités</font></p1></center>
                         </div>
-                            <p>Il y a du nouveau à Vélocentrix</p>
-                            <p>Ceci est l'actualité, oui oui l'actualité</p>
-                            <p>Quand on en rajoute</p>
-                            <p>Pinpin et ponpon sont des pimpon</p>
+                            <center><a href="actualite.php"><p><font color="black">Déménagement de l'atelier...</font></p></a></center>
+                            <p><font size = "2">28/10/2013 </font></p>
+                            </br>
+
+                            <center><a href="actualite.php"><p><font color="black">Top 10 du Vélo Love</font></p></a></center>
+                            <p><font size = "2">20/09/2013 </font></p>
+                            </br>
+                            <center><a href="actualite.php"><p><font color="black">Cavaliers de la pleine lune</font></p></a></center>
+                            <p><font size = "2">16/09/2013 </font></p>
+                            </br>
+
+                            <center><a href="actualite.php"><p><font color="black">Parking Day Québec</font></p></a></center>
+                            <p><font size = "2">16/09/2013 </font></p>
+                            </br>
+
+                            <center><a href="actualite.php"><p><font color="black">Pimp ton vélo</font></p></a></center>
+                            <p><font size = "2">16/09/2013 </font></p>l
+                            </br>
+
                         <div id="SideBar">
                             <center><p1><font color="white">Été 2013</font></p1></center>
                         </div>
