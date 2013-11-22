@@ -29,9 +29,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
             <?php
             if($_POST['modif'])
             {   $table = $_POST['modif'];
-                echo $table;
                 $contenu = $_POST['editor1'];
-                echo $contenu;
                 $query = "UPDATE $table SET Titre='$contenu' WHERE idContenu=1";
                 mysql_query($query);
             }
