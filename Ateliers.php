@@ -12,9 +12,24 @@
         <?php
         include("Header.html");
         ?>
+        <?php
+        $host = "localhost";
+        $user = "equipe2";
+        $password = "equipe2abc";
+        $bd = "a13equipe2";
+
+        mysql_connect($host,$user,$password) or die ("Impossible de se connecter");
+        mysql_select_db($bd) or die ("Impossible de se connecter à la base de données");
+
+        $query = "SELECT * FROM Ateliers";
+        $result = mysql_query($query);
+
+        $row = mysql_fetch_array($result);
+
+        ?>
         <div class="contenu border-radius">
             <div class="row-fluid">
-                <div class="span5"><h3>Ateliers du Mercredi et du Samedi</h3><p1>Vous souhaitez apprendre la base de la mécanique vélo ? Nous fournissons l'expertise et les outils sur place.
+                <div class="span5"><?php echo $row['Titre'].$row['Paragraphe'] ?><h3>Ateliers du Mercredi et du Samedi</h3><p1>Vous souhaitez apprendre la base de la mécanique vélo ? Nous fournissons l'expertise et les outils sur place.
 
                         Il y a un atelier le mercredi, de 18 h à 21 h et le samedi de 10 à 13 h et ce sont des "ateliers libres" c'est-à-dire que vous faites l'entretien ou la réparation vous-même, mais on est là au besoin pour vous guider dans l'apprentissage. L'atelier communautaire VéloCentrix existe pour offrir à tous les cyclistes les outils, le savoir, l'accès à un garage de mécanique-vélo et les conseils de mécanicien(s) bénévole(s).
 
