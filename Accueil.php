@@ -30,7 +30,7 @@
             ?>
             <div class="contenu border-radius">
 		        <div class="row-fluid">
-			        <div class="span5"><?php echo '$row["Titre"]'.'row["Paragraphe"]'?><h3>Bienvenue à VéloCentrix!</h3><p1>VéloCentrix est une entreprise d'économie sociale ayant pour mission de soutenir la culture du vélo urbain et utilitaire.<br/><br/> 						       Par des actions concrètes et des activités festives, l'organisme a comme objectif de faciliter l'accès au vélo pour tous dans la ville de Québec.<br/><br/>L'atelier 						       communautaire VéloCentrix existe pour offrir à tous les cyclistes les outils, le savoir, l'accès à un garage de mécanique-vélo et les conseils de mécanicien(s) 						       bénévole(s).</p1>
+			        <div class="span5"><?php echo $row['Titre'].$row['Paragraphe'];?><h3>Bienvenue à VéloCentrix!</h3><p1>VéloCentrix est une entreprise d'économie sociale ayant pour mission de soutenir la culture du vélo urbain et utilitaire.<br/><br/> 						       Par des actions concrètes et des activités festives, l'organisme a comme objectif de faciliter l'accès au vélo pour tous dans la ville de Québec.<br/><br/>L'atelier 						       communautaire VéloCentrix existe pour offrir à tous les cyclistes les outils, le savoir, l'accès à un garage de mécanique-vélo et les conseils de mécanicien(s) 						       bénévole(s).</p1>
 			        </div>
 			        <div class="span4">
 
