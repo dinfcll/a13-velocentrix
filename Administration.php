@@ -48,6 +48,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         $Utilisateur=$_POST['nom'];
                         $Password = $_POST['passe'];
                         $query = "INSERT INTO $table ('Utilisateur','Password') VALUES ('Bonjour','Allo')";
+                        echo "Salut";
 
                 }
                 elseif($_POST['supprimertable'])
