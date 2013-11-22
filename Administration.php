@@ -41,19 +41,19 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                 }
             }
             else{
-                if($_POST['ajouter'])
+                if($_POST['ajoutertable'])
                 {
                     if($_POST['nom'] && $_POST['mot de passe'])
                     {
-                        $table = $_POST['ajouter'];
+                        $table = $_POST['ajoutertable'];
                         $Utilisateur=$_POST['nom'];
                         $Password = $_POST['mot de passe'];
                         $query = "INSERT INTO $tables ('Utilisateur','Password') VALUES ('$Utilisateur','$Password')";
                     }
                 }
-                elseif($_POST['supprimer'])
+                elseif($_POST['supprimertable'])
                 {
-                        $table = $_POST['supprimer'];
+                        $table = $_POST['supprimertable'];
                         $Utilisateur = $_POST['nom'];
                         $Password = $_POST['mot de passe'];
                         $query = "SELECT * FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
@@ -65,9 +65,9 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         mysql_query($query);
                     }
                 }
-                elseif($_POST['modifier'])
+                elseif($_POST['modifiertable'])
                 {
-                        $table = $_POST['modifier'];
+                        $table = $_POST['modifiertable'];
                         $Utilisateur = $_POST['nom'];
                         $Password = $_POST['ancien'];
                         $Nouveau = $_POST['nouveau'];
@@ -94,7 +94,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                  <h4>Ajouter un administrateur</h4><br/>
                  <h5>Nom d'utilisateur:</h5><input type='text'name='nom'/>
                  <h5>Mot de passe:</h5><input type='text' name='mot de passe'/>
-                 <input type='hidden' name='ajouter'value='Utilisateurs'/>
+                 <input type='hidden' name='ajoutertable'value='Utilisateurs'/>
                  <input style='margin-top: 15px;' class='btn' id='boutonadmin' type='submit' name='ajouter' value='Ajouter un administrateur'/>
                  </form></div></div>";
                 echo"<div class='span3'>
@@ -103,7 +103,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                  <h4>Supprimer un administrateur</h4><br/>
                  <h5>Nom d'utilisateur:</h5><select name='nom'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idUtilisateur']."'>". $row['Utilisateur'] . "</option>";} echo "</select>
                  <h5>Mot de passe:</h5><input type='text' name='mot de passe'/>
-                 <input type='hidden' name='supprimer'value='Utilisateurs'/>
+                 <input type='hidden' name='supprimertable'value='Utilisateurs'/>
                  <input style='margin-top: 15px;' class='btn' id='boutonadmin' type='submit' name='supprimer' value='Supprimer'/>
                  </form></div></div>";
                 echo"<div class='span3'>
@@ -114,7 +114,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                  <h5>Ancient mot de passe</h5><input type='text' name='ancien'/>
                  <h5>Nouveau mot de passe:</h5><input type='text' name='nouveau'/>
                  <h5>Confirmation:</h5><input type='text' name='confirmation'/></br>
-                 <input type='hidden' name='modifier'value='Utilisateurs'/>
+                 <input type='hidden' name='modifiertable'value='Utilisateurs'/>
                  <input style='margin-top: 15px;' class='btn' id='boutonadmin' type='submit' name='modifier' value='Modifier le mot de passe'/>
                  </form></div></div>";
             }
