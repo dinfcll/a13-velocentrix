@@ -69,7 +69,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
             elseif($_POST['Query'])
                 {
                     $table = $_POST['Query'];
-                    $query = "SELECT * FROM $table";
+                    $query = "SELECT * FROM $table WHERE idContenu=1";
                     $result = mysql_query($query);
                     $row = mysql_fetch_array($result);
                     echo "<div class='span4'>";
