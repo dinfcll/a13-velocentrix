@@ -81,7 +81,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                 echo "CKEDITOR.replace( 'editor1' );";
                         echo "</script>";
                     echo"<center><input style='margin-top: 30px' class='btn' id='boutonadmin' type='submit' name='modifiertitre' value='Modifier le contenu'/></center>";
-                    echo"<input  type='hidden' name='Modif' value='".$table."'/></form>";
+                    echo"<input  type='hidden' name='modif' value='".$table."'/></form>";
                     echo "</div>";
                     echo "<div class='span5'>";
                     echo "<h5>Paragraphe</h5>";
@@ -92,7 +92,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     echo "CKEDITOR.replace( 'editor2' );";
                     echo "</script>";
                     echo"<center><input style='margin-top: 30px' class='btn' id='boutonadmin' type='submit' name='modifierpara' value='Modifier le contenu'/></center>";
-                    echo"<input  type='hidden' name='Modif' value='".$table."'/></form>";
+                    echo"<input  type='hidden' name='modif' value='".$table."'/></form>";
                     echo "</div>";
                 }
                 else{
