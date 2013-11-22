@@ -53,17 +53,41 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                 }
                 elseif($_POST['supprimer'])
                 {
-
+                        $table = $_POST['supprimer'];
+                        $Utilisateur = $_POST['nom'];
+                        $Password = $_POST['mot de passe'];
+                        $query = "SELECT * FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
+                        $result = mysql_query($query);
+                        $row = mysql_fetch_array($result);
+                    if($row > 0)
+                    {
+                        $query = "DELETE FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
+                        mysql_query($query);
+                    }
                 }
                 elseif($_POST['modifier'])
                 {
-
+                        $table = $_POST['modifier'];
+                        $Utilisateur = $_POST['nom'];
+                        $Password = $_POST['ancien'];
+                        $Nouveau = $_POST['nouveau'];
+                        $query = "SELECT * FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Utilisateur'";
+                        $result = mysql_query($query);
+                        $row = mysql_fetch_array($result);
+                    if($row > 0)
+                    {
+                        $query = "UPDATE $table SET Password='$Nouveau' WHERE Utilisateur='$Utilisateur'";
+                    }
                 }
             }
             echo "<center><h3>".$_POST['Query']."</h3></center>";
             echo "<div class='row-fluid'>";
             if($_POST['Query'] == "Gestion des accès administrateurs")
             {
+                $table = "Utilisateurs";
+                $query = "SELECT * FROM $table";
+                $result = mysql_query($query);
+
                 echo"<div class='span3'>
                     <div style='background-color: #8C2318; border-radius: 5px;padding: 20px; color: #ffffff;'>
                 <form action='administration.php' method='POST' name='Ajout'>
@@ -77,7 +101,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     <div style='background-color: #8C2318; border-radius: 5px;padding: 20px; color: #ffffff'>
                 <form action='administration.php' method='POST' name='Supression'>
                  <h4>Supprimer un administrateur</h4><br/>
-                 <h5>Nom d'utilisateur:</h5><select name='nom'></select>
+                 <h5>Nom d'utilisateur:</h5><select name='nom'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idUtilisateur']."'>". $row['Utilisateur'] . "</option>";} echo "</select>
                  <h5>Mot de passe:</h5><input type='text' name='mot de passe'/>
                  <input type='hidden' name='supprimer'value='Utilisateurs'/>
                  <input style='margin-top: 15px;' class='btn' id='boutonadmin' type='submit' name='supprimer' value='Supprimer'/>
@@ -86,7 +110,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     <div style='background-color: #8C2318; border-radius: 5px;padding: 20px; color: #ffffff'>
                 <form action='administration.php' method='POST' name='Modification'>
                  <h4>Modifier un mot de passe</h4><br/>
-                 <h5>Nom d'utilisateur:</h5><select name='nom'></select>
+                 <h5>Nom d'utilisateur:</h5><select name='nom'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idUtilisateur']."'>". $row['Utilisateur'] . "</option>";} echo "</select>
                  <h5>Ancient mot de passe</h5><input type='text' name='ancien'/>
                  <h5>Nouveau mot de passe:</h5><input type='text' name='nouveau'/>
                  <h5>Confirmation:</h5><input type='text' name='confirmation'/></br>
