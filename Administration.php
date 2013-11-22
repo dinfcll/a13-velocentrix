@@ -115,7 +115,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         <center><h5><font color="white">Pages modifiables</font></h5></center>
                     </div>
                         <form action="Administration.php" method="POST"><input  type="hidden" name="Query" value="Accueil"/><input class="btn" id="boutonadmin" type="submit" name="Accueil" value="Accueil"/></form><br/>
-                        <form action="Administration.php" method="POST"><input  type="hidden" name="Query" value="Atelier"/><input class="btn"  id="boutonadmin" type="submit" name="Atelier" value="Atelier de vélo"/></form><br/>
+                        <form action="Administration.php" method="POST"><input  type="hidden" name="Query" value="Ateliers"/><input class="btn"  id="boutonadmin" type="submit" name="Atelier" value="Atelier de vélo"/></form><br/>
                         <form action="Administration.php" method="POST"><input  type="hidden" name="Query" value="Informations"/><input class="btn"  id="boutonadmin" type="submit" name="Informations" value="Informations"/></form><br/>
                         <form action="Administration.php" method="POST"><input  type="hidden" name="Query" value="Footer"/><input class="btn"  id="boutonadmin" style="margin-bottom: 20px;" type="submit" name="Footer" value="Footer"/></form>
                     <div id="access">
