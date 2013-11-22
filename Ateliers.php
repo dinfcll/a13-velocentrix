@@ -22,6 +22,9 @@
 
                         L'atelier vélo communautaire VéloCentrix est entièrement opéré par des bénévoles</p1>
                 </div>
+                <div class="span4">
+                    <img src="img/Mécanique.jpg"/>
+                </div>
                 <div class="span3">
                     <div id="SideBarfirst">
                         <center><p1><font color="white">Ateliers</font></p1></center>
