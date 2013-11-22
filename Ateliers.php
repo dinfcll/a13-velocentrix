@@ -22,22 +22,6 @@
 
                         L'atelier vélo communautaire VéloCentrix est entièrement opéré par des bénévoles</p1>
                 </div>
-                <div class="span4">
-                    <div id="Carousel" class="carousel slide carousel-fade">
-                        <ol class="carousel-indicators">
-                            <li data-target="#Carousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#Carousel" data-slide-to="1"></li>
-                            <li data-target="#Carousel" data-slide-to="2"></li>
-                            <li data-target="#Carousel" data-slide-to="3"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="active item"><img width="100%" src="img/Mécanique.jpg"/></div>
-                        </div>
-                        <a class="carousel-control left" href="#Carousel" data-slide="prev">&lsaquo;</a>
-                        <a class="carousel-control right" href="#Carousel" data-slide="next">&rsaquo;</a>
-                    </div>
-                </div>
-
                 <div class="span3">
                     <div id="SideBarfirst">
                         <center><p1><font color="white">Ateliers</font></p1></center>
@@ -60,12 +44,5 @@
 <?php
 include("Footer.html")
 ?>
-<script src="twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/jquery.js"></script>
-<script src="twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-carousel.js"></script>
-<script src="twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-transition.js"></script>
-<script>
-    $('#Carousel').carousel({ interval: 3000 })
-</script>
-
 </body>
 </html>
