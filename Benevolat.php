@@ -29,10 +29,9 @@
         ?>
         <div class="contenu border-radius">
             <div class="row-fluid">
-                <div class="span9">
+                <?php echo "<center>".$row['Titre']."</center>" ?>
                     <div class="span9"><?php echo $row['Titre'].$row['Paragraphe'] ?>
                     </div>
-                </div>
                 <div class="span3">
                     <center><img width="100%" src="img/Benevolat.jpg"/></center>
                 </div>
