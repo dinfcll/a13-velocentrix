@@ -42,12 +42,11 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
             }
                 if($_POST['ajoutertable'])
                 {
-                    echo"Salut";
                     if($_POST['nom'] && $_POST['mot de passe'])
                     {
                         $table = $_POST['ajoutertable'];
                         $Utilisateur=$_POST['nom'];
-                        $Password = $_POST['mot de passe'];
+                        $Password = $_POST['passe'];
                         $query = "INSERT INTO $table ('Utilisateur','Password') VALUES ('$Utilisateur','$Password')";
                     }
                 }
@@ -55,7 +54,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                 {
                         $table = $_POST['supprimertable'];
                         $Utilisateur = $_POST['nom'];
-                        $Password = $_POST['mot de passe'];
+                        $Password = $_POST['passe'];
                         $query = "SELECT * FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
                         $result = mysql_query($query);
                         $row = mysql_fetch_array($result);
@@ -93,7 +92,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                 <form action='Administration.php' method='POST' name='Ajout'>
                  <h4>Ajouter un administrateur</h4><br/>
                  <h5>Nom d'utilisateur:</h5><input type='text'name='nom'/>
-                 <h5>Mot de passe:</h5><input type='text' name='mot de passe'/>
+                 <h5>Mot de passe:</h5><input type='text' name='passe'/>
                  <input type='hidden' name='ajoutertable'value='Utilisateurs'/>
                  <input style='margin-top: 15px;' class='btn' id='boutonadmin' type='submit' name='ajouter' value='Ajouter un administrateur'/>
                  </form></div></div>";
@@ -102,7 +101,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                 <form action='Administration.php' method='POST' name='Supression'>
                  <h4>Supprimer un administrateur</h4><br/>
                  <h5>Nom d'utilisateur:</h5><select name='nom'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idUtilisateur']."'>". $row['Utilisateur'] . "</option>";} echo "</select>
-                 <h5>Mot de passe:</h5><input type='text' name='mot de passe'/>
+                 <h5>Mot de passe:</h5><input type='text' name='passe'/>
                  <input type='hidden' name='supprimertable'value='Utilisateurs'/>
                  <input style='margin-top: 15px;' class='btn' id='boutonadmin' type='submit' name='supprimer' value='Supprimer'/>
                  </form></div></div>";
