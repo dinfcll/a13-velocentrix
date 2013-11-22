@@ -117,7 +117,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         <form action="Administration.php" method="POST"><input  type="hidden" name="Query" value="Accueil"/><input class="btn" id="boutonadmin" type="submit" name="Accueil" value="Accueil"/></form><br/>
                         <form action="Administration.php" method="POST"><input  type="hidden" name="Query" value="Ateliers"/><input class="btn"  id="boutonadmin" type="submit" name="Atelier" value="Atelier de vélo"/></form><br/>
                         <form action="Administration.php" method="POST"><input  type="hidden" name="Query" value="Informations"/><input class="btn"  id="boutonadmin" type="submit" name="Informations" value="Informations"/></form><br/>
-                    <form action="Administration.php" method="POST"><input  type="hidden" name="Query" value="Benevolat"/><input class="btn"  id="boutonadmin" type="submit" name="Benevolat" value="Benevolat"/></form><br/>
+                    <form action="Administration.php" method="POST"><input  type="hidden" name="Query" value="Benevolat"/><input class="btn"  id="boutonadmin" type="submit" name="Benevolat" value="Bénévolat"/></form><br/>
                     <form action="Administration.php" method="POST"><input  type="hidden" name="Query" value="Footer"/><input class="btn"  id="boutonadmin" style="margin-bottom: 20px;" type="submit" name="Footer" value="Footer"/></form>
                     <div id="access">
                         <center><h5><font color="white">Administration des accès</font></h5></center>
