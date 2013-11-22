@@ -16,7 +16,9 @@
         ?>
         <div class="contenu border-radius">
             <div class="row-fluid">
-
+                <div class="span12">
+                    <h1>Bonjour!</h1>
+                </div>
 
             </div>
         </div>
