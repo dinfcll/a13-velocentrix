@@ -29,13 +29,7 @@
         ?>
         <div class="contenu border-radius">
             <div class="row-fluid">
-                <div class="span5"><?php echo $row['Titre'].$row['Paragraphe'] ?><h3>Ateliers du Mercredi et du Samedi</h3><p1>Vous souhaitez apprendre la base de la mécanique vélo ? Nous fournissons l'expertise et les outils sur place.
-
-                        Il y a un atelier le mercredi, de 18 h à 21 h et le samedi de 10 à 13 h et ce sont des "ateliers libres" c'est-à-dire que vous faites l'entretien ou la réparation vous-même, mais on est là au besoin pour vous guider dans l'apprentissage. L'atelier communautaire VéloCentrix existe pour offrir à tous les cyclistes les outils, le savoir, l'accès à un garage de mécanique-vélo et les conseils de mécanicien(s) bénévole(s).
-
-                        La façon de faire privilégiée par nos membres est d'apprendre en réparant "sur le tas", quoique que cela ne soit pas l'idéal, nécessité fait loi.
-
-                        L'atelier vélo communautaire VéloCentrix est entièrement opéré par des bénévoles</p1>
+                <div class="span5"><?php echo $row['Titre'].$row['Paragraphe'] ?>
                 </div>
                 <div class="span4">
                     <img src="img/Mécanique.jpg"/>
