@@ -90,7 +90,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
 
                 echo"<div class='span3'>
                     <div style='background-color: #8C2318; border-radius: 5px;padding: 20px; color: #ffffff;'>
-                <form action='administration.php' method='POST' name='Ajout'>
+                <form action='Administration.php' method='POST' name='Ajout'>
                  <h4>Ajouter un administrateur</h4><br/>
                  <h5>Nom d'utilisateur:</h5><input type='text'name='nom'/>
                  <h5>Mot de passe:</h5><input type='text' name='mot de passe'/>
@@ -99,7 +99,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                  </form></div></div>";
                 echo"<div class='span3'>
                     <div style='background-color: #8C2318; border-radius: 5px;padding: 20px; color: #ffffff'>
-                <form action='administration.php' method='POST' name='Supression'>
+                <form action='Administration.php' method='POST' name='Supression'>
                  <h4>Supprimer un administrateur</h4><br/>
                  <h5>Nom d'utilisateur:</h5><select name='nom'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idUtilisateur']."'>". $row['Utilisateur'] . "</option>";} echo "</select>
                  <h5>Mot de passe:</h5><input type='text' name='mot de passe'/>
@@ -108,7 +108,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                  </form></div></div>";
                 echo"<div class='span3'>
                     <div style='background-color: #8C2318; border-radius: 5px;padding: 20px; color: #ffffff'>
-                <form action='administration.php' method='POST' name='Modification'>
+                <form action='Administration.php' method='POST' name='Modification'>
                  <h4>Modifier un mot de passe</h4><br/>
                  <h5>Nom d'utilisateur:</h5><select name='nom'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idUtilisateur']."'>". $row['Utilisateur'] . "</option>";} echo "</select>
                  <h5>Ancient mot de passe</h5><input type='text' name='ancien'/>
