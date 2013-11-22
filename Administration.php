@@ -44,11 +44,11 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                 if($_POST['ajoutertable'])
                 {
                     if($_POST['nom'] && $_POST['mot de passe'])
-                    {
+                    {   echo"Salut";
                         $table = $_POST['ajoutertable'];
                         $Utilisateur=$_POST['nom'];
                         $Password = $_POST['mot de passe'];
-                        $query = "INSERT INTO $tables ('Utilisateur','Password') VALUES ('$Utilisateur','$Password')";
+                        $query = "INSERT INTO $table ('Utilisateur','Password') VALUES ('$Utilisateur','$Password')";
                     }
                 }
                 elseif($_POST['supprimertable'])
@@ -110,7 +110,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     <div style='background-color: #8C2318; border-radius: 5px;padding: 20px; color: #ffffff'>
                 <form action='Administration.php' method='POST' name='Modification'>
                  <h4>Modifier un mot de passe</h4><br/>
-                 <h5>Nom d'utilisateur:</h5><select name='nom'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idUtilisateur']."'>". $row['Utilisateur'] . "</option>";} echo "</select>
+                 <h5>Nom d'utilisateur:</h5><select name='nom'>";$result = mysql_query($query); while($row = mysql_fetch_array($result)){echo"<option value='".$row['idUtilisateur']."'>". $row['Utilisateur'] . "</option>";} echo "</select>
                  <h5>Ancient mot de passe</h5><input type='text' name='ancien'/>
                  <h5>Nouveau mot de passe:</h5><input type='text' name='nouveau'/>
                  <h5>Confirmation:</h5><input type='text' name='confirmation'/></br>
