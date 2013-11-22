@@ -123,7 +123,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         <center><h5><font color="white">Administration des accès</font></h5></center>
                     </div>
                     <form action="Administration.php" method="POST"><input  type="hidden" name="Query" value="Gestion des accès administrateurs"/><input class="btn" id="boutonadmin" type="submit" name="Ajout" value="Ajouter ou modifier un utilisateur"/></form><br/>
-                    <div id="access">
+                    <div id="proposition">
                         <center><h5><font color="white">Propositions</font></h5></center>
                     </div>
                     <form action="Administration.php" method="POST"><input  type="hidden" name="Query" value="Proposition"/><input class="btn" id="boutonadmin" type="submit" name="Consultation" value="Consulter les propositions"/></form><br/>
