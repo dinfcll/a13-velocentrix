@@ -35,7 +35,7 @@
 
                 <div class="span9">
                     <center></center>
-                        <h4 style="position: relative;"><font color="white">Où sommes-nous?</font></h4>
+                        <h4 style="position: relative;"><font color="black">Où sommes-nous?</font></h4>
                         <iframe width="100%" height="75%" frameborder="0" scrolling="no" marginheight="0"
                                 marginwidth="0" src="https://www.google.ca/maps?f=q&amp;source=s_q&amp;
                                 hl=fr&amp;geocode=&amp;q=798,+12e+rue,+Qu%C3%A9bec,+Qu%C3%A9bec,+G1J+2M8&amp;
