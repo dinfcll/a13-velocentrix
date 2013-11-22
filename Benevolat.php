@@ -30,7 +30,7 @@
         <div class="contenu border-radius">
             <div class="row-fluid">
                 <div class="span9">
-                    <img width="100%" src="img/benevolat.jpg"/>
+                    <center><img width="100%" src="img/benevolat.jpg"/></center>
                 </div>
                 <div class="span3">
                     <div id="SideBarfirst">
