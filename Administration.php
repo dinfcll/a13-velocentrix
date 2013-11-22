@@ -125,7 +125,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     <?php
                     if($_POST['Query'] && $_POST['Query'] != "Gestion des accès administrateurs"){
                     echo"
-                    <a class='fancybox' rel='group' href='img/administration.jpg'><img src='img/administration.jpg' alt='' /></a>
+                    <a class='fancybox' rel='group' href='img/Accueil.png'><img src='img/Accueil.png' alt='' /></a>
                     ";
                     }
                     ?>
