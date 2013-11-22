@@ -22,7 +22,7 @@
             mysql_connect($host,$user,$password) or die ("Impossible de se connecter");
             mysql_select_db($bd) or die ("Impossible de se connecter à la base de données");
 
-            $query = "SELECT * FROM $table";
+            $query = "SELECT * FROM Accueil";
             $result = mysql_query($query);
 
             $row = mysql_fetch_array($result);
