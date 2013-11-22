@@ -42,7 +42,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
             }
                 if($_POST['ajoutertable'])
                 {
-                    if($_POST['nom'] && $_POST['mot de passe'])
+                    if($_POST['nom'] && $_POST['passe'])
                     {
                         $table = $_POST['ajoutertable'];
                         $Utilisateur=$_POST['nom'];
