@@ -30,7 +30,7 @@
 
                         <form action="Membre.php" method="post">
                             <b><h4>Prénom</h4></b>
-                            <input style="height: 30px" type="text" name="prenom" id="asdf" size = "40">
+                            <input style="height: 30px" type="text" name="prenom" size = "40">
                             <b><h4>Nom</b></h4>
                             <input style="height: 30px" type="text" name="nom" size="40">
                             <b><h4>Adresse email</h4></b>
