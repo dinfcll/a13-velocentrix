@@ -75,7 +75,8 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     echo "<div class='span4'>";
                     echo "<h5>Titre</h5>";
                     echo "<form action='Administration.php' method='POST'>";
-                       echo "<textarea cols='80' id='editor1' name='editor1' rows='10' value='".$row['Titre']."'>";
+                       echo "<textarea cols='80' id='editor1' name='editor1' rows='10'>";
+                        echo $row['Titre'];
                         echo "</textarea>";
                         echo "<script>";
                 echo "CKEDITOR.replace( 'editor1' );";
