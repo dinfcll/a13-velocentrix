@@ -49,6 +49,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         $Password = $_POST['passe'];
                         $query = "INSERT INTO $table (Utilisateur,Password) VALUES ('$Utilisateur','$Password')";
                         mysql_query($query);
+                        echo "<center><h3 style='color: green;'>--Ajout Complété--</h3></center>";
                     }
                     else{
                         echo "<center><h3 style='color: red;'>--OUPS IL MANQUE DES INFORMATIONS--</h3></center>";
@@ -68,7 +69,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         {
                             $query = "DELETE FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
                             mysql_query($query);
-
+                            echo "<center><h3 style='color: green;'>--Suppression Complétée--</h3></center>";
                         }
                         else{
                             echo "<center><h3 style='color: red;'>--Vous avez entré un mauvais mot de passe--</h3></center>";
@@ -94,6 +95,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                             if($row > 0)
                             {
                                 $query = "UPDATE $table SET Password='$Nouveau' WHERE Utilisateur='$Utilisateur'";
+                                echo "<center><h3 style='color: green;'>--Mise à jour Complétée--</h3></center>";
                             }
                         }
                         else{
