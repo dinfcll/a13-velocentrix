@@ -175,7 +175,6 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     echo "</script>";
                     echo "<center><input style='margin-top: 30px' class='btn' id='boutonadmin' type='submit' name='modifierside' value='Modifier le contenu'/></center>";
                     echo "<input  type='hidden' name='modif' value='".$table."'/></form>";
-                    echo " </form>";
                     echo "</div>";
                     echo "<div class='span5'>";
                     echo "<h5>Paragraphe</h5>";
@@ -195,7 +194,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     <center><h3>Bienvenue dans la section administration</h3></center>
                     <center><img src='img/administration.jpg'/></center>
                 </div>";
-                    ?>
+                }?>
                 <div class='span3'>
                     <div id='SideBarfirst'>
                         <center><h5><font color='white'>Pages modifiables</font></h5></center>
@@ -220,14 +219,14 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     }?>
                     </div>
 
-        <script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>
-        <link rel='stylesheet' href='fancybox/source/jquery.fancybox.css?v=2.1.5' type='text/css' media='screen' />
-        <script type='text/javascript' src='fancybox/source/jquery.fancybox.pack.js?v=2.1.5'></script>
-        <script type='text/javascript'>
-            $(document).ready(function() {
-                $('.fancybox').fancybox();
-            });
-        </script>
+                <script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>
+                <link rel='stylesheet' href='fancybox/source/jquery.fancybox.css?v=2.1.5' type='text/css' media='screen' />
+                <script type='text/javascript' src='fancybox/source/jquery.fancybox.pack.js?v=2.1.5'></script>
+                <script type='text/javascript'>
+                $(document).ready(function() {
+                    $('.fancybox').fancybox();
+                });
+                </script>
 
 
         </div>
