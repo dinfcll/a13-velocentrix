@@ -95,6 +95,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                             if($row > 0)
                             {
                                 $query = "UPDATE $table SET Password='$Nouveau' WHERE Utilisateur='$Utilisateur'";
+                                mysql_query($query);
                                 echo "<center><h3 style='color: green;'>--Mise à jour Complétée--</h3></center>";
                             }
                         }
