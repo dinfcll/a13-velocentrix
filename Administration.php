@@ -62,6 +62,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         $Utilisateur = $_POST['nom'];
                         $Password = $_POST['passe'];
                         $query = "SELECT * FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
+                        echo $query;
                         $result = mysql_query($query);
                         $row = mysql_fetch_array($result);
                         if($row > 0)
