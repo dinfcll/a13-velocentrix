@@ -1,4 +1,4 @@
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
@@ -44,6 +44,8 @@
                             <script>
                                 CKEDITOR.replace( 'editor1' );
                             </script>
+                            </br>
+                            <p style="text-align: right"><input type="submit" class="btn btn-primary" value="Soumettre"></p>
                         </form>
 
 
