@@ -229,7 +229,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
             });
         </script>
 
-            </div>
+
         </div>
 
     </div>
