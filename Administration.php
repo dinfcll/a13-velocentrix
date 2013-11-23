@@ -178,6 +178,21 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     echo"<center><input style='margin-top: 30px' class='btn' id='boutonadmin' type='submit' name='modifierpara' value='Modifier le contenu'/></center>";
                     echo"<input  type='hidden' name='modif' value='".$table."'/></form>";
                     echo "</div>";
+                    echo"</div><div class='row-fluid'>
+                    <div class='span4'>
+                        <h5>SideBar</h5>
+                        <form action='Administration.php' method='POST'>
+                        <textarea cols='80' id='editor3' name='editor3' rows='10'>";
+                        echo $row['Sidebar'];
+                        echo "</textarea>
+                        <script>";
+                    echo "CKEDITOR.replace( 'editor3' );";
+                        echo"</script>";
+                        echo"<center><input style='margin-top: 30px' class='btn' id='boutonadmin' type='submit' name='modifierside' value='Modifier le contenu'/></center>";
+                    echo"<input  type='hidden' name='modif' value='".$table."'/></form>
+                        </form>
+                    </div>
+                    </div>";
                 }
                 else{
                     echo "<div class='span9'>
