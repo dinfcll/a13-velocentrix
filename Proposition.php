@@ -1,4 +1,4 @@
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
@@ -16,6 +16,23 @@
         <?php
         include("Header.html");
         ?>
+
+        <?php
+        $host = "localhost";
+        $user = "equipe2";
+        $password = "equipe2abc";
+        $bd = "a13equipe2";
+
+        mysql_connect($host,$user,$password) or die ("Impossible de se connecter");
+        mysql_select_db($bd) or die ("Impossible de se connecter à la base de données");
+
+        $query = "SELECT * FROM Proposition";
+        $result = mysql_query($query);
+
+        $row = mysql_fetch_array($result);
+
+        ?>
+
         <div class="contenu border-radius">
             <div class="row-fluid">
 
@@ -44,6 +61,8 @@
                             <script>
                                 CKEDITOR.replace( 'editor1' );
                             </script>
+                            </br>
+                            <p style="text-align: right"><input type="submit" class="btn btn-primary" value="Soumettre"></p>
                         </form>
 
 
