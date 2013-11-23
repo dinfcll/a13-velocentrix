@@ -42,46 +42,63 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
             }
                 if($_POST['ajoutertable'])
                 {
-
-                        echo "Bonjour";
+                    if($_POST['nom'] && $_POST['passe'])
+                    {
                         $table = $_POST['ajoutertable'];
                         $Utilisateur=$_POST['nom'];
                         $Password = $_POST['passe'];
-                        $query = "INSERT INTO $table (Utilisateur,Password) VALUES ('Bonjour','Allo')";
+                        $query = "INSERT INTO $table (Utilisateur,Password) VALUES ('$Utilisateur','$Password')";
                         mysql_query($query);
-
-                        echo "Salut";
-                        echo $query;
-
+                    }
+                    else{
+                        echo "<center><h3 style='color: red;'>--OUPS IL MANQUE DES INFORMATIONS--</h3></center>";
+                    }
                 }
                 elseif($_POST['supprimertable'])
                 {
                         $table = $_POST['supprimertable'];
+                    if($_POST['nom'] && $_POST['passe'])
+                    {
                         $Utilisateur = $_POST['nom'];
                         $Password = $_POST['passe'];
                         $query = "SELECT * FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
                         $result = mysql_query($query);
                         $row = mysql_fetch_array($result);
-                    if($row > 0)
-                    {
-                        $query = "DELETE FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
-                        mysql_query($query);
+                        if($row > 0)
+                        {
+                            $query = "DELETE FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
+                            mysql_query($query);
+                        }
+                    }
+                    else{
+                        echo "<center><h3 style='color: red;'>--OUPS IL MANQUE DES INFORMATIONS--</h3></center>";
                     }
                 }
                 elseif($_POST['modifiertable'])
                 {
                         $table = $_POST['modifiertable'];
+                    if($_POST['nom'] && $_POST['ancien'] && $_POST['nouveau'])
+                    {
                         $Utilisateur = $_POST['nom'];
                         $Password = $_POST['ancien'];
                         $Nouveau = $_POST['nouveau'];
-                        $query = "SELECT * FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Utilisateur'";
-                        $result = mysql_query($query);
-                        $row = mysql_fetch_array($result);
-                    if($row > 0)
-                    {
-                        $query = "UPDATE $table SET Password='$Nouveau' WHERE Utilisateur='$Utilisateur'";
+                        $Confirmation = $_POST['confirmation'];
+                        if($Nouveau == $Confirmation){
+                            $query = "SELECT * FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
+                            $result = mysql_query($query);
+                            $row = mysql_fetch_array($result);
+                            if($row > 0)
+                            {
+                                $query = "UPDATE $table SET Password='$Nouveau' WHERE Utilisateur='$Utilisateur'";
+                            }
+                        }
+                        else{
+                            echo "<center><h3 style='color: red;'>--Confirmation de mot de passe incorrect--</h3></center>";
+                        }
                     }
-
+                    else{
+                        echo "<center></center><h3 style='color: red;'>--OUPS IL MANQUE DES INFORMATIONS--</h3></center>";
+                    }
             }
             echo "<center><h3>".$_POST['Query']."</h3></center>";
             echo "<div class='row-fluid'>";
@@ -98,6 +115,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                  <h5>Nom d'utilisateur:</h5><input type='text'name='nom'/>
                  <h5>Mot de passe:</h5><input type='text' name='passe'/>
                  <input type='hidden' name='ajoutertable'value='Utilisateurs'/>
+                 <input  type='hidden' name='Query' value='Gestion des accès administrateurs'/>
                  <input style='margin-top: 15px;' class='btn' id='boutonadmin' type='submit' name='ajouter' value='Ajouter un administrateur'/>
                  </form></div></div>";
                 echo"<div class='span3'>
@@ -107,6 +125,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                  <h5>Nom d'utilisateur:</h5><select name='nom'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idUtilisateur']."'>". $row['Utilisateur'] . "</option>";} echo "</select>
                  <h5>Mot de passe:</h5><input type='text' name='passe'/>
                  <input type='hidden' name='supprimertable'value='Utilisateurs'/>
+                 <input  type='hidden' name='Query' value='Gestion des accès administrateurs'/>
                  <input style='margin-top: 15px;' class='btn' id='boutonadmin' type='submit' name='supprimer' value='Supprimer'/>
                  </form></div></div>";
                 echo"<div class='span3'>
@@ -118,6 +137,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                  <h5>Nouveau mot de passe:</h5><input type='text' name='nouveau'/>
                  <h5>Confirmation:</h5><input type='text' name='confirmation'/></br>
                  <input type='hidden' name='modifiertable'value='Utilisateurs'/>
+                 <input  type='hidden' name='Query' value='Gestion des accès administrateurs'/>
                  <input style='margin-top: 15px;' class='btn' id='boutonadmin' type='submit' name='modifier' value='Modifier le mot de passe'/>
                  </form></div></div>";
             }
