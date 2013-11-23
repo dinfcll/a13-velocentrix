@@ -62,13 +62,16 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         $Utilisateur = $_POST['nom'];
                         $Password = $_POST['passe'];
                         $query = "SELECT * FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
-                        echo $query;
                         $result = mysql_query($query);
                         $row = mysql_fetch_array($result);
                         if($row > 0)
                         {
                             $query = "DELETE FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
                             mysql_query($query);
+
+                        }
+                        else{
+                            echo "<center><h3 style='color: red;'>--Vous avez entré un mauvais mot de passe--</h3></center>";
                         }
                     }
                     else{
