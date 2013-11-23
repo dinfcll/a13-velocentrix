@@ -214,7 +214,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Proposition'/><input class='btn' id='boutonadmin' type='submit' name='Consultation' value='Consulter les propositions'/></form><br/>
                     <h5>Quoi modifier ?</h5>
                     <a class='fancybox' rel='group' href='img/Accueil.png'><img src='img/Accueil.png' alt='' /></a></div>
-                    <div class='row-fluid'>
+                    <div style='margin-top: -50px' class='row-fluid'>
                 <div class='span4'>
                     <h5>SideBar</h5>
                     <form action='Administration.php' method='POST'>
