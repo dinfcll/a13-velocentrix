@@ -147,23 +147,6 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                  <input  type='hidden' name='Query' value='Gestion des accès administrateurs'/>
                  <input style='margin-top: 15px;' class='btn' id='boutonadmin' type='submit' name='modifier' value='Modifier le mot de passe'/>
                  </form></div></div>";
-                echo "<div class='span3'>
-                    <div id='SideBarfirst'>
-                        <center><h5><font color='white'>Pages modifiables</font></h5></center>
-                    </div>
-                        <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Accueil'/><input class='btn' id='boutonadmin' type='submit' name='Accueil' value='Accueil'/></form><br/>
-                        <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Ateliers'/><input class='btn'  id='boutonadmin' type='submit' name='Atelier' value='Atelier de vélo'/></form><br/>
-                        <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Informations'/><input class='btn'  id='boutonadmin' type='submit' name='Informations' value='Informations'/></form><br/>
-                    <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Benevolat'/><input class='btn'  id='boutonadmin' type='submit' name='Benevolat' value='Bénévolat'/></form><br/>
-                    <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Footer'/><input class='btn'  id='boutonadmin' style='margin-bottom: 20px;' type='submit' name='Footer' value='Footer'/></form>
-                    <div id='access'>
-                        <center><h5><font color='white'>Administration des accès</font></h5></center>
-                    </div>
-                    <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Gestion des accès administrateurs'/><input class='btn' id='boutonadmin' type='submit' name='Ajout' value='Ajouter ou modifier un utilisateur'/></form><br/>
-                    <div id='proposition'>
-                        <center><h5><font color='white'>Propositions</font></h5></center>
-                    </div>
-                    <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Proposition'/><input class='btn' id='boutonadmin' type='submit' name='Consultation' value='Consulter les propositions'/></form><br/>";
             }
             elseif($_POST['Query'])
                 {
@@ -182,6 +165,17 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         echo "</script>";
                     echo"<center><input style='margin-top: 30px' class='btn' id='boutonadmin' type='submit' name='modifiertitre' value='Modifier le contenu'/></center>";
                     echo"<input  type='hidden' name='modif' value='".$table."'/></form>";
+                    echo "<h5>SideBar</h5>
+                    <form action='Administration.php' method='POST'>
+                    <textarea cols='80' id='editor3' name='editor3' rows='10'>";
+                    echo $row['Sidebar'];
+                    echo "</textarea>
+                        <script>";
+                    echo "CKEDITOR.replace( 'editor3' );";
+                    echo "</script>";
+                    echo "<center><input style='margin-top: 30px' class='btn' id='boutonadmin' type='submit' name='modifierside' value='Modifier le contenu'/></center>";
+                    echo "<input  type='hidden' name='modif' value='".$table."'/></form>";
+                    echo " </form>";
                     echo "</div>";
                     echo "<div class='span5'>";
                     echo "<h5>Paragraphe</h5>";
@@ -194,8 +188,15 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     echo "</script>";
                     echo"<center><input style='margin-top: 30px' class='btn' id='boutonadmin' type='submit' name='modifierpara' value='Modifier le contenu'/></center>";
                     echo"<input  type='hidden' name='modif' value='".$table."'/></form>";
-                    echo "</div>
-                      <div class='span3'>
+                    echo "</div>";
+                    }
+                else{
+                    echo "<div class='span9'>
+                    <center><h3>Bienvenue dans la section administration</h3></center>
+                    <center><img src='img/administration.jpg'/></center>
+                </div>";
+                    ?>
+                <div class='span3'>
                     <div id='SideBarfirst'>
                         <center><h5><font color='white'>Pages modifiables</font></h5></center>
                     </div>
@@ -212,48 +213,13 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         <center><h5><font color='white'>Propositions</font></h5></center>
                     </div>
                     <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Proposition'/><input class='btn' id='boutonadmin' type='submit' name='Consultation' value='Consulter les propositions'/></form><br/>
-                    <h5>Quoi modifier ?</h5>
-                    <a class='fancybox' rel='group' href='img/Accueil.png'><img src='img/Accueil.png' alt='' /></a></div>
-                    <div style='margin-top: -50px' class='row-fluid'>
-                <div class='span4'>
-                    <h5>SideBar</h5>
-                    <form action='Administration.php' method='POST'>
-                    <textarea cols='80' id='editor3' name='editor3' rows='10'>";
-            echo $row['Sidebar'];
-            echo "</textarea>
-                        <script>";
-            echo "CKEDITOR.replace( 'editor3' );";
-            echo "</script>";
-                        echo "<center><input style='margin-top: 30px' class='btn' id='boutonadmin' type='submit' name='modifierside' value='Modifier le contenu'/></center>";
-                    echo "<input  type='hidden' name='modif' value='".$table."'/></form>";
-                       echo " </form>
+                    <?php if($_POST['Query'] && $_POST['Query'] != "Gestion des accès administrateurs")
+                    {
+                        echo "<h5>Quoi modifier ?</h5>";
+                        echo "<a class='fancybox' rel='group' href='img/Accueil.png'><img src='img/Accueil.png' alt='' /></a>";
+                    }?>
                     </div>
-                    </div>
-                ";
-                }
-                else{
-                    echo "<div class='span9'>
-                    <center><h3>Bienvenue dans la section administration</h3></center>
-                    <center><img src='img/administration.jpg'/></center>
-                </div>
-                <div class='span3'>
-                    <div id='SideBarfirst'>
-                        <center><h5><font color='white'>Pages modifiables</font></h5></center>
-                    </div>
-                        <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Accueil'/><input class='btn' id='boutonadmin' type='submit' name='Accueil' value='Accueil'/></form><br/>
-                        <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Ateliers'/><input class='btn'  id='boutonadmin' type='submit' name='Atelier' value='Atelier de vélo'/></form><br/>
-                        <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Informations'/><input class='btn'  id='boutonadmin' type='submit' name='Informations' value='Informations'/></form><br/>
-                    <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Benevolat'/><input class='btn'  id='boutonadmin' type='submit' name='Benevolat' value='Bénévolat'/></form><br/>
-                    <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Footer'/><input class='btn'  id='boutonadmin' style='margin-bottom: 20px;' type='submit' name='Footer' value='Footer'/></form>
-                    <div id='access'>
-                        <center><h5><font color='white'>Administration des accès</font></h5></center>
-                    </div>
-                    <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Gestion des accès administrateurs'/><input class='btn' id='boutonadmin' type='submit' name='Ajout' value='Ajouter ou modifier un utilisateur'/></form><br/>
-                    <div id='proposition'>
-                        <center><h5><font color='white'>Propositions</font></h5></center>
-                    </div>";
-                }
-                ?>
+
         <script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>
         <link rel='stylesheet' href='fancybox/source/jquery.fancybox.css?v=2.1.5' type='text/css' media='screen' />
         <script type='text/javascript' src='fancybox/source/jquery.fancybox.pack.js?v=2.1.5'></script>
