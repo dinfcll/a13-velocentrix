@@ -14,6 +14,19 @@
         <?php
         include("Header.html");
         ?>
+
+        <?php
+        $host = "localhost";
+        $user = "equipe2";
+        $password = "equipe2abc";
+        $bd = "a13equipe2";
+
+        mysql_connect($host,$user,$password) or die ("Impossible de se connecter");
+        mysql_select_db($bd) or die ("Impossible de se connecter à la base de données");
+
+        $row = mysql_fetch_array($result);
+
+        ?>
         <div class="contenu border-radius">
             <div class="row-fluid">
                 <div class="span12">
