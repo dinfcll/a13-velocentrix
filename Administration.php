@@ -123,7 +123,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     <div style='background-color: #8C2318; border-radius: 5px;padding: 20px; color: #ffffff'>
                 <form action='Administration.php' method='POST' name='Supression'>
                  <h4>Supprimer un administrateur</h4><br/>
-                 <h5>Nom d'utilisateur:</h5><select name='nom'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idUtilisateur']."'>". $row['Utilisateur'] . "</option>";} echo "</select>
+                 <h5>Nom d'utilisateur:</h5><select name='nom'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['Utilisateur']."'>". $row['Utilisateur'] . "</option>";} echo "</select>
                  <h5>Mot de passe:</h5><input type='text' name='passe'/>
                  <input type='hidden' name='supprimertable'value='Utilisateurs'/>
                  <input  type='hidden' name='Query' value='Gestion des accès administrateurs'/>
@@ -133,7 +133,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     <div style='background-color: #8C2318; border-radius: 5px;padding: 20px; color: #ffffff'>
                 <form action='Administration.php' method='POST' name='Modification'>
                  <h4>Modifier un mot de passe</h4><br/>
-                 <h5>Nom d'utilisateur:</h5><select name='nom'>";$result = mysql_query($query); while($row = mysql_fetch_array($result)){echo"<option value='".$row['idUtilisateur']."'>". $row['Utilisateur'] . "</option>";} echo "</select>
+                 <h5>Nom d'utilisateur:</h5><select name='nom'>";$result = mysql_query($query); while($row = mysql_fetch_array($result)){echo"<option value='".$row['Utilisateur']."'>". $row['Utilisateur'] . "</option>";} echo "</select>
                  <h5>Ancient mot de passe</h5><input type='text' name='ancien'/>
                  <h5>Nouveau mot de passe:</h5><input type='text' name='nouveau'/>
                  <h5>Confirmation:</h5><input type='text' name='confirmation'/></br>
