@@ -1,6 +1,6 @@
 <?php
 echo "allo1";
-require_once('./stripe-php-1.9.0/lib/Stripe.php');
+require_once('stripe-php-1.9.0/lib/Stripe.php');
 echo "allo2";
 $stripe = array(
     "secret_key" => "sk_test_wxEOZeO18PBoQwPr03vGsm5C",
