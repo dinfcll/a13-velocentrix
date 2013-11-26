@@ -95,7 +95,7 @@
     <div id="push"></div>
 </div>
 <?php
-include("Footer.html")
+include("Footer.php")
 ?>
 </body>
 </html>

@@ -243,7 +243,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
     <div id="push"></div>
 </div>
 <?php
-include("Footer.html")
+include("Footer.php")
 ?>
 
 </body>
