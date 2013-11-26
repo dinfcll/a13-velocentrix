@@ -31,7 +31,7 @@
         <div class="contenu border-radius">
             <?php echo "<center>".$row['Titre']."</center>" ?>
             <div class="row-fluid">
-                    <div class="span8"><?php echo $row['Titre'].$row['Paragraphe'] ?>
+                    <div class="span8"><?php echo $row['Paragraphe'] ?>
                     </div>
                 <div class="span4">
                     <center><img width="100%" src="img/Benevolat.jpg"/></center>
