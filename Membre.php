@@ -42,9 +42,13 @@
                         <?php
                             if($prenom && $nom && $email)
                             {
-                               echo('<script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                               echo('
+                                    <h4>Pour effectuer le paiement, cliquez sur le bouton "Pay with card"</h4>
+                                    </br></br>
+                                    <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
                                     data-key="<?php echo $stripe[\'publishable_key\']; ?>"
-                                    data-description="Abonnement annuel"></script>');
+                                    data-description="Abonnement annuel"></script>'
+                                    );
                             }
 
                             else
@@ -53,8 +57,8 @@
                                       <h2 style="color: #88a65e">Devenir membre vous intéresse?</h2>
                                       </br>
                                       <h4>Le prix de l\'abonnement annuel est de 20$</h4>
-                                      <h4>Pour devenir membre, il suffit de remplir le formulaire suivant et de cliquer sur "Pay with card"
-                                          pour complèter le paiement de l\'abonnement.</h4>
+                                      <h4>Pour devenir membre, il suffit de remplir le formulaire suivant et de cliquer sur "Continuer".
+                                          Ce bouton vous menera ensuite sur la page de paiement.</h4>
                                       </br>
 
                                       <form action="Membre.php" method="post">
@@ -72,16 +76,9 @@
                             }
                         ?>
 
-
-
-
-
                     </center>
 
-                    <?php
-                        $query = "INSERT INTO $table (Prenom, Nom, Courriel) VALUES ('$prenom','$nom','$email')";
-                        $result = mysql_query($query);
-                    ?>
+
 
                 </div>
 
@@ -127,6 +124,8 @@
                                 echo '<h4>Adresse email : '.$_POST['email'].'</h4>';
                                 echo '<h4>Merci!</h4>';
 
+                                $query = "INSERT INTO $table (Prenom, Nom, Courriel) VALUES ('$prenom','$nom','$email')";
+                                $result = mysql_query($query);
                             }
                         ?>
                     </center>
