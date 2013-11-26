@@ -62,9 +62,17 @@
                     $sujet = $_POST['sujet'];
                     $proposition = $_POST['proposition'];
 
-                    $query = "INSERT INTO $table (Prenom, Nom, Courriel, Sujet, Proposition) VALUES ('$prenom','$nom','$email','$sujet','$proposition')";
-                    $result = mysql_query($query);
-                    echo $query;
+                    if($prenom=null)
+                    {
+                        $query = "INSERT INTO $table (Prenom, Nom, Courriel, Sujet, Proposition) VALUES ('$prenom','$nom','$email','$sujet','$proposition')";
+                        $result = mysql_query($query);
+                        echo $query;
+                    }
+                    else
+                    {
+                        echo "Tous les champs sont requis";
+                    }
+
 
                     mysql_close();
                     ?>
