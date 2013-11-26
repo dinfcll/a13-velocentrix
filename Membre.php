@@ -49,6 +49,21 @@
                                     data-key="<?php echo $stripe[\'publishable_key\']; ?>"
                                     data-description="Abonnement annuel"></script>'
                                     );
+
+                                require_once(dirname(__FILE__) . '/stripe.php');
+
+                                $token = $_POST['stripeToken'];
+
+                                $customer = Stripe_Customer::create(array(
+                                    'email' => $_POST['email'],
+                                    'card' => $token
+                                ));
+
+                                $charge = Stripe_Charge::create(array(
+                                    'customer' => $customer->id,
+                                    'amount' => 2000,
+                                    'currency' => 'cad'
+                                ));
                             }
 
                             else
@@ -58,7 +73,7 @@
                                       </br>
                                       <h4>Le prix de l\'abonnement annuel est de 20$</h4>
                                       <h4>Pour devenir membre, il suffit de remplir le formulaire suivant et de cliquer sur "Continuer".
-                                          Ce bouton vous menera ensuite sur la page de paiement.</h4>
+                                          Ce bouton vous menera ensuite vers la page de paiement.</h4>
                                       </br>
 
                                       <form action="Membre.php" method="post">
@@ -101,22 +116,6 @@
                         <?php
                             if (isset($_POST['email']) && isset($_POST['prenom']) && isset($_POST['nom']))
                             {
-
-                                require_once(dirname(__FILE__) . '/stripe.php');
-
-                                $token = $_POST['stripeToken'];
-
-                                $customer = Stripe_Customer::create(array(
-                                    'email' => $_POST['email'],
-                                    'card' => $token
-                                ));
-
-                                $charge = Stripe_Charge::create(array(
-                                    'customer' => $customer->id,
-                                    'amount' => 2000,
-                                    'currency' => 'cad'
-                                ));
-
 
                                 echo '<h4>Votre abonnement à été complété avec succès avec les informations suivantes : </h4>';
                                 echo '<h4>Prénom : '.$_POST['prenom'].'</h4>';
