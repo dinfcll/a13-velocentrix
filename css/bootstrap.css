@@ -6216,13 +6216,10 @@ height:30%;
 background-color:#88a65e;
 margin-bottom: 20px;
 }
-/*#SideBar{*/
-    /*background-color:#88a65e;*/
-    /*margin-top: 20px;*/
-    /*margin-bottom: 20px;*/
-/*}*/
+#SideBar{
+    width: 100%;
+}
 #SideBar p strong{
-  width: 100%;
   background-color: #88a65e;
   color: #ffffff;
 
