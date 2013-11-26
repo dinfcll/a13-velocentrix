@@ -17,22 +17,6 @@
         include("Header.html");
         ?>
 
-        <?php
-        $host = "localhost";
-        $user = "equipe2";
-        $password = "equipe2abc";
-        $bd = "a13equipe2";
-
-        mysql_connect($host,$user,$password) or die ("Impossible de se connecter");
-        mysql_select_db($bd) or die ("Impossible de se connecter à la base de données");
-
-        $query = "SELECT * FROM Proposition";
-        $result = mysql_query($query);
-
-        $row = mysql_fetch_array($result);
-
-        ?>
-
         <div class="contenu border-radius">
             <div class="row-fluid">
 
@@ -64,6 +48,29 @@
                             </br>
                             <p style="text-align: right"><input type="submit" class="btn btn-primary" value="Soumettre"></p>
                         </form>
+
+                    <?php
+                    $host = "localhost";
+                    $user = "equipe2";
+                    $password = "equipe2abc";
+                    $bd = "a13equipe2";
+                    $table = "Proposition";
+
+                    mysql_connect($host,$user,$password) or die ("Impossible de se connecter");
+                    mysql_select_db($bd) or die ("Impossible de se connecter à la base de données");
+
+                    $prenom = $_POST['prenom'];
+                    $nom = $_POST['nom'];
+                    $email = $_POST['email'];
+                    $sujet = $_POST['sujet'];
+                    $proposition = $_POST['editor1'];
+
+                    $query = "INSERT INTO $table (Prenom, Nom, Courriel, Sujet, Proposition) VALUES ('$prenom','$nom','$email','$sujet','$proposition')";
+                    $result = mysql_query($query);
+                    echo $query;
+
+                    mysql_close();
+                    ?>
 
 
                 </div>
