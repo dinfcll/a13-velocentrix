@@ -42,13 +42,13 @@
                         <?php
                             if($prenom && $nom && $email)
                             {
-                               echo('
-                                    <h4>Pour effectuer le paiement, cliquez sur le bouton "Pay with card"</h4>
+                               echo"
+                                    <h4>Pour effectuer le paiement, cliquez sur le bouton 'Pay with card'</h4>
                                     </br></br>
-                                    <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-                                    data-key="<?php echo $stripe[\'publishable_key\']; ?>"
-                                    data-description="Abonnement annuel"></script>'
-                                    );
+                                    <script src='https://checkout.stripe.com/v2/checkout.js' class='stripe-button'
+                                    data-key='".$stripe['publishable_key']."
+                                    data-description='Abonnement annuel'></script>";
+
 
                                 echo "a";
                                 require_once(dirname(__FILE__) . '/stripe.php');
@@ -90,7 +90,7 @@
                                             <input type="submit" class="btn btn-primary" value="Continuer">
                                        </form>
                                        <p style="color: red;">***Tous les champs sont obligatoire***</p>
-                                            ');
+                                     ');
                             }
                         ?>
 
@@ -117,7 +117,7 @@
                 <div class="span12">
                     <center>
                         <?php
-                            if (isset($_POST['email']) && isset($_POST['prenom']) && isset($_POST['nom']))
+                            if($prenom && $nom && $email)
                             {
 
                                 echo '<h4>Votre abonnement à été complété avec succès avec les informations suivantes : </h4>';
