@@ -170,6 +170,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         echo "</script>";
                     echo"<center><input style='margin-top: 30px' class='btn' id='boutonadmin' type='submit' name='modifiertitre' value='Modifier le contenu'/></center>";
                     echo"<input  type='hidden' name='modif' value='".$table."'/></form>";
+                    if($_POST['Query'] != 'Footer'){
                     echo "<h5>SideBar</h5>
                     <form action='Administration.php' method='POST'>
                     <textarea cols='80' id='editor3' name='editor3' rows='10'>";
@@ -181,6 +182,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     echo "<center><input style='margin-top: 30px' class='btn' id='boutonadmin' type='submit' name='modifierside' value='Modifier le contenu'/></center>";
                     echo "<input  type='hidden' name='modif' value='".$table."'/></form>";
                     echo "</div>";
+                    }
                     echo "<div class='span5'>";
                     echo "<h5>Paragraphe</h5>";
                     echo "<form action='Administration.php' method='POST'>";
