@@ -26,7 +26,6 @@
                         <center><?php echo $row['Titre'];?>
                             </br>
                             <?php echo $row['Paragraphe'];?>
-                            <?php echo 'bourgault de marde';?>
                             </br></br></br>
                             <a href="Plan.php"><button style="text-align: center;" type="button" class="btn btn-primary"><i class="icon-sitemap icon-large">Plan du site</i></button></a>
                         </center>
