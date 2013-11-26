@@ -601,18 +601,6 @@
 <!--                </div>-->
                 </div>
                 </div>
-                <div class="span3">
-                    <div id="SideBarfirst">
-                        <center><p1><font color="white">Actualités</font></p1></center>
-                    </div>
-                    <p>Il y a du nouveau à Vélocentrix</p>
-                    <p>Ceci est l'actualité, oui oui l'actualité</p>
-                    <p>Quand on en rajoute</p>
-                    <p>Pinpin et ponpon sont des pimpon</p>
-                    <div id="SideBar">
-                        <center><p1><font color="white">Été 2013</font></p1></center>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
