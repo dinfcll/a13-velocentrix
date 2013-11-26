@@ -41,10 +41,7 @@
                             </center>
 
                             <h4>Sujet : <input style="height: 28" type="text" name="sujet"></h4>
-                            <textarea cols="80" id="editor1" name="editor1" rows="10"></textarea>
-                            <script>
-                                CKEDITOR.replace( 'editor1' );
-                            </script>
+                            <textarea style="width: 100%" name="proposition" rows="10"></textarea>
                             </br>
                             <p style="text-align: right"><input type="submit" class="btn btn-primary" value="Soumettre"></p>
                         </form>
@@ -63,7 +60,7 @@
                     $nom = $_POST['nom'];
                     $email = $_POST['email'];
                     $sujet = $_POST['sujet'];
-                    $proposition = $_POST['editor1'];
+                    $proposition = $_POST['proposition'];
 
                     $query = "INSERT INTO $table (Prenom, Nom, Courriel, Sujet, Proposition) VALUES ('$prenom','$nom','$email','$sujet','$proposition')";
                     $result = mysql_query($query);
