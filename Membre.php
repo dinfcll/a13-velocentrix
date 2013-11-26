@@ -38,27 +38,44 @@
             <div class="row-fluid">
                 <div class="span6">
                     <center>
-                        <h2 style="color: #88a65e">Devenir membre vous intéresse?</h2>
-                        </br>
-                        <h4>Le prix de l'abonnement annuel est de 20$</h4>
-                        <h4>Pour devenir membre, il suffit de remplir le formulaire suivant et de cliquer sur "Pay with card"
-                            pour complèter le paiement de l'abonnement.</h4>
-                        </br>
 
-                        <form action="Membre.php" method="post">
-                            <b><h4>Prénom</h4></b>
-                            <input style="height: 30px" type="text" name="prenom" size = "40">
-                            <b><h4>Nom</b></h4>
-                            <input style="height: 30px" type="text" name="nom" size="40">
-                            <b><h4>Adresse email</h4></b>
-                            <input style="height: 30px" type = "text" name="email" size="40">
-                            </br></br>
-                            <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-                                    data-key="<?php echo $stripe['publishable_key']; ?>"
-                                    data-description="Abonnement annuel"></script>
+                        <?php
+                            if($prenom && $nom && $email)
+                            {
+                               echo('<script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                                    data-key="<?php echo $stripe[\'publishable_key\']; ?>"
+                                    data-description="Abonnement annuel"></script>');
+                            }
 
-                        </form>
-                        <p style="color: red;">***Tous les champs sont obligatoire***</p>
+                            else
+                            {
+                                echo('
+                                      <h2 style="color: #88a65e">Devenir membre vous intéresse?</h2>
+                                      </br>
+                                      <h4>Le prix de l\'abonnement annuel est de 20$</h4>
+                                      <h4>Pour devenir membre, il suffit de remplir le formulaire suivant et de cliquer sur "Pay with card"
+                                          pour complèter le paiement de l\'abonnement.</h4>
+                                      </br>
+
+                                      <form action="Membre.php" method="post">
+                                            <b><h4>Prénom</h4></b>
+                                            <input style="height: 30px" type="text" name="prenom" size = "40">
+                                            <b><h4>Nom</b></h4>
+                                            <input style="height: 30px" type="text" name="nom" size="40">
+                                            <b><h4>Adresse email</h4></b>
+                                            <input style="height: 30px" type = "text" name="email" size="40">
+                                            </br></br>
+                                            <input type="submit" class="btn btn-primary" value="Continuer">
+                                       </form>
+                                       <p style="color: red;">***Tous les champs sont obligatoire***</p>
+                                            ');
+                            }
+                        ?>
+
+
+
+
+
                     </center>
 
                     <?php
@@ -109,11 +126,6 @@
                                 echo '<h4>Nom : '.$_POST['nom'].'</h4>';
                                 echo '<h4>Adresse email : '.$_POST['email'].'</h4>';
                                 echo '<h4>Merci!</h4>';
-
-                            }
-
-                            else
-                            {
 
                             }
                         ?>
