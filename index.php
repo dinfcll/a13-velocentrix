@@ -60,6 +60,7 @@
 				        <div id="SideBarfirst">
 					        <center><p1><font color="white">Actualités</font></p1></center>
                         </div>
+                            <?php echo $row['Sidebar']?>
                             <center><a href="actualite.php"><p><font color="black">Déménagement de l'atelier...</font></p></a></center>
                             <p><font size = "2">28/10/2013 </font></p>
                             </br>
@@ -78,10 +79,6 @@
                             <center><a href="actualite.php"><p><font color="black">Pimp ton vélo</font></p></a></center>
                             <p><font size = "2">16/09/2013 </font></p>l
                             </br>
-
-                        <div id="SideBar">
-                            <?php echo $row['Sidebar']?>
-                        </div>
 
 			        </div>
                 </div>
