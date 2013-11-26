@@ -33,19 +33,6 @@
         $sujet = $_POST['sujet'];
         $proposition = $_POST['proposition'];
 
-        if($prenom && $nom && $email && $sujet && $proposition)
-        {
-            $query = "INSERT INTO $table (Prenom, Nom, Courriel, Sujet, Proposition) VALUES ('$prenom','$nom','$email','$sujet','$proposition')";
-            $result = mysql_query($query);
-            echo $query;
-        }
-        else
-        {
-            echo "Tous les champs sont requis";
-        }
-
-
-        mysql_close();
         ?>
 
         <div class="contenu border-radius">
@@ -77,7 +64,22 @@
                             <p style="text-align: right"><input type="submit" class="btn btn-primary" value="Soumettre"></p>
                         </form>
 
+                    <?php
+                    if($prenom && $nom && $email && $sujet && $proposition)
+                    {
+                    $query = "INSERT INTO $table (Prenom, Nom, Courriel, Sujet, Proposition) VALUES ('$prenom','$nom','$email','$sujet','$proposition')";
+                    $result = mysql_query($query);
+                    echo "<p style='color: red'>Votre proposition d'événement a bien été envoyé. Merci</p>";
+                    }
+                    else
+                    {
+                    echo "<p style='color: red'>Tous les champs sont requis.</p>";
+                    }
 
+
+                    mysql_close();
+
+                    ?>
 
 
                 </div>
