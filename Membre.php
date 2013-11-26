@@ -42,12 +42,13 @@
                         <?php
                             if($prenom && $nom && $email)
                             {
-                               echo"
-                                    <h4>Pour effectuer le paiement, cliquez sur le bouton 'Pay with card'</h4>
+                               echo('
+                                    <h4>Pour effectuer le paiement, cliquez sur le bouton "Pay with card"</h4>
                                     </br></br>
-                                    <script src='https://checkout.stripe.com/v2/checkout.js' class='stripe-button'
-                                    data-key='".$stripe['publishable_key']."
-                                    data-description='Abonnement annuel'></script>";
+                                    <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                                    data-key="');
+                               echo $stripe['publishable_key'];
+                               echo('" data-description="Abonnement annuel"></script>');
 
 
                                 echo "a";
