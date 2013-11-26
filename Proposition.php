@@ -17,6 +17,37 @@
         include("Header.html");
         ?>
 
+        <?php
+        $host = "localhost";
+        $user = "equipe2";
+        $password = "equipe2abc";
+        $bd = "a13equipe2";
+        $table = "Proposition";
+
+        mysql_connect($host,$user,$password) or die ("Impossible de se connecter");
+        mysql_select_db($bd) or die ("Impossible de se connecter à la base de données");
+
+        $prenom = $_POST['prenom'];
+        $nom = $_POST['nom'];
+        $email = $_POST['email'];
+        $sujet = $_POST['sujet'];
+        $proposition = $_POST['proposition'];
+
+        if($prenom && $nom && $email && $sujet && $proposition)
+        {
+            $query = "INSERT INTO $table (Prenom, Nom, Courriel, Sujet, Proposition) VALUES ('$prenom','$nom','$email','$sujet','$proposition')";
+            $result = mysql_query($query);
+            echo $query;
+        }
+        else
+        {
+            echo "Tous les champs sont requis";
+        }
+
+
+        mysql_close();
+        ?>
+
         <div class="contenu border-radius">
             <div class="row-fluid">
 
@@ -46,36 +77,7 @@
                             <p style="text-align: right"><input type="submit" class="btn btn-primary" value="Soumettre"></p>
                         </form>
 
-                    <?php
-                    $host = "localhost";
-                    $user = "equipe2";
-                    $password = "equipe2abc";
-                    $bd = "a13equipe2";
-                    $table = "Proposition";
 
-                    mysql_connect($host,$user,$password) or die ("Impossible de se connecter");
-                    mysql_select_db($bd) or die ("Impossible de se connecter à la base de données");
-
-                    $prenom = $_POST['prenom'];
-                    $nom = $_POST['nom'];
-                    $email = $_POST['email'];
-                    $sujet = $_POST['sujet'];
-                    $proposition = $_POST['proposition'];
-
-                    if($prenom=null)
-                    {
-                        $query = "INSERT INTO $table (Prenom, Nom, Courriel, Sujet, Proposition) VALUES ('$prenom','$nom','$email','$sujet','$proposition')";
-                        $result = mysql_query($query);
-                        echo $query;
-                    }
-                    else
-                    {
-                        echo "Tous les champs sont requis";
-                    }
-
-
-                    mysql_close();
-                    ?>
 
 
                 </div>
