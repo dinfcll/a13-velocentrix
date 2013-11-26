@@ -24,7 +24,6 @@
 
                     <div class="span4">
                         <center><?php echo $row['Titre'];?>
-                            <h4><font color="white">Informations</font></h4>
                             </br>
                             <?php echo $row['Paragraphe'];?>
                             <?php echo 'bourgault de marde';?>
