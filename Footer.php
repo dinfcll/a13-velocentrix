@@ -22,7 +22,7 @@
 
                     <div class="span4">
                         <center>
-                            <h4 style="position: relative;"><font color="white">Informations</font></h4>
+                            <h4><font color="white">Informations</font></h4>
                             </br>
                             <h5><font color="white">Adresse : 798, 12e rue, Québec, G1J 2M8</font></h5>
                             <h5><font color="white">Horaire d'atelier : </font></h5>

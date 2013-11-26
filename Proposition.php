@@ -66,16 +66,15 @@
 
                     <?php
                     if($prenom && $nom && $email && $sujet && $proposition)
-                    {
-                    $query = "INSERT INTO $table (Prenom, Nom, Courriel, Sujet, Proposition) VALUES ('$prenom','$nom','$email','$sujet','$proposition')";
-                    $result = mysql_query($query);
-                    echo $query;
-                    echo "<p style='color: red'>Votre proposition d'événement a bien été envoyé. Merci</p>";
-                    }
+                        {
+                        $query = "INSERT INTO $table (Prenom, Nom, Courriel, Sujet, Proposition) VALUES ('$prenom','$nom','$email','$sujet','$proposition')";
+                        $result = mysql_query($query);
+                        echo "<p style='color: red'>Votre proposition d'événement a bien été envoyé. Merci</p>";
+                        }
                     else
-                    {
-                    echo "<p style='color: red'>Tous les champs sont requis.</p>";
-                    }
+                        {
+                        echo "<p style='color: red'>Tous les champs sont requis.</p>";
+                        }
 
 
                     mysql_close();
@@ -96,7 +95,7 @@
     <div id="push"></div>
 </div>
 <?php
-include("Footer.html")
+include("Footer.php")
 ?>
 </body>
 </html>

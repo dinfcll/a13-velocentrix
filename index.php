@@ -95,7 +95,7 @@
         <div id="push"></div>
         </div>
         <?php
-            include("Footer.html")
+        include("Footer.php")
         ?>
     <script src="twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-carousel.js"></script>
     <script src="twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-transition.js"></script>

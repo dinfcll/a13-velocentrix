@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
     <script src="ckeditor/ckeditor.js"></script>
     <link href="ckeditor/samples/sample.css" rel="stylesheet">
 
@@ -242,7 +243,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
     <div id="push"></div>
 </div>
 <?php
-include("Footer.html")
+include("Footer.php")
 ?>
 
 </body>
