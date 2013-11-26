@@ -1,8 +1,10 @@
 
 
 <footer>
-    <?php $table = 'Footer';
-     $query = SELECT * FROM $table;
+    <?php
+     $query = SELECT * FROM Footer;
+     $result = mysql_query($query);
+     $row = mysql_fetch_array($result);
      ?>
     <div id="footer" style="position:relative">
 	    <div class="row-fluid">
@@ -21,7 +23,7 @@
                     </div>
 
                     <div class="span4">
-                        <center>
+                        <center><?php echo $row['Titre'];?>
                             <h4><font color="white">Informations</font></h4>
                             </br>
                             <h5><font color="white">Adresse : 798, 12e rue, Québec, G1J 2M8</font></h5>
