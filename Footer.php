@@ -2,7 +2,7 @@
 
 <footer>
     <?php
-     $query = SELECT * FROM Footer;
+     $query = "SELECT * FROM Footer";
      $result = mysql_query($query);
      $row = mysql_fetch_array($result);
      ?>
