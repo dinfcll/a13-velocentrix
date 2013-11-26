@@ -34,9 +34,14 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                 $query = "UPDATE $table SET Titre='$contenu' WHERE idContenu=1";
                 mysql_query($query);
                 }
-                else{
+                elseif($_POST['editor2']){
                     $contenu = $_POST['editor2'];
                     $query = "UPDATE $table SET Paragraphe='$contenu' WHERE idContenu=1";
+                    mysql_query($query);
+                }
+                else{
+                    $contenu = $_POST['editor3'];
+                    $query = "UPDATE $table SET Sidebar='$contenu' WHERE idContenu=1";
                     mysql_query($query);
                 }
             }
