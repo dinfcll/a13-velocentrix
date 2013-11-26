@@ -6216,10 +6216,14 @@ height:30%;
 background-color:#88a65e;
 margin-bottom: 20px;
 }
-#SideBar{
-    background-color:#88a65e;
-    margin-top: 20px;
-    margin-bottom: 20px;
+/*#SideBar{*/
+    /*background-color:#88a65e;*/
+    /*margin-top: 20px;*/
+    /*margin-bottom: 20px;*/
+/*}*/
+#SideBar strong{
+  background-color: #88a65e;
+  color: #ffffff;
 }
 #access{
     background-color: #8C2318;

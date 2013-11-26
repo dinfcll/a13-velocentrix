@@ -79,10 +79,8 @@
                             <p><font size = "2">16/09/2013 </font></p>l
                             </br>
 
-                        <h5 style="background-color: green">Bonjour</h5>
-
                         <div id="SideBar">
-                            <center><p1><font color="white">Été 2013</font></p1></center>
+                            <?php echo $row['Sidebar']?>
                         </div>
 
 			        </div>
