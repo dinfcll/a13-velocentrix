@@ -27,6 +27,7 @@
                             <h4><font color="white">Informations</font></h4>
                             </br>
                             <?php echo $row['Paragraphe'];?>
+                            <?php echo 'allo';?>
                             <h5><font color="white">Adresse : 798, 12e rue, Québec, G1J 2M8</font></h5>
                             <h5><font color="white">Horaire d'atelier : </font></h5>
                             <h5><font color="white">Lundi au vendredi : 8h00 à 16h00</font></h5>
