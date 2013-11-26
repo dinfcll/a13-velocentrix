@@ -61,25 +61,6 @@
 					        <center><p1><font color="white">Actualités</font></p1></center>
                         </div>
                             <?php echo $row['Sidebar']?>
-                            <center><a href="actualite.php"><p><font color="black">Déménagement de l'atelier...</font></p></a></center>
-                            <p><font size = "2">28/10/2013 </font></p>
-                            </br>
-
-                            <center><a href="actualite.php"><p><font color="black">Top 10 du Vélo Love</font></p></a></center>
-                            <p><font size = "2">20/09/2013 </font></p>
-                            </br>
-                            <center><a href="actualite.php"><p><font color="black">Cavaliers de la pleine lune</font></p></a></center>
-                            <p><font size = "2">16/09/2013 </font></p>
-                            </br>
-
-                            <center><a href="actualite.php"><p><font color="black">Parking Day Québec</font></p></a></center>
-                            <p><font size = "2">16/09/2013 </font></p>
-                            </br>
-
-                            <center><a href="actualite.php"><p><font color="black">Pimp ton vélo</font></p></a></center>
-                            <p><font size = "2">16/09/2013 </font></p>l
-                            </br>
-
 			        </div>
                 </div>
                 <div style="background-image: url('img/body11.png'); border-radius: 5px;padding-bottom: 20px">
