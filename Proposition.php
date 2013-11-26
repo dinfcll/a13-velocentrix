@@ -69,6 +69,7 @@
                     {
                     $query = "INSERT INTO $table (Prenom, Nom, Courriel, Sujet, Proposition) VALUES ('$prenom','$nom','$email','$sujet','$proposition')";
                     $result = mysql_query($query);
+                    echo $query;
                     echo "<p style='color: red'>Votre proposition d'événement a bien été envoyé. Merci</p>";
                     }
                     else
