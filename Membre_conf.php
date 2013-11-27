@@ -25,7 +25,21 @@ else
     header('Location: Membre.php');
 }
 
+require_once(dirname(__FILE__) . '/stripe.php');
 
+$token = $_POST['stripeToken'];
+
+$customer = Stripe_Customer::create(array(
+    'email' => $email,
+    'card' => $token
+));
+
+
+$charge = Stripe_Charge::create(array(
+    'customer' => $customer->id,
+    'amount' => 2000,
+    'currency' => "cad"
+));
 
 
 
