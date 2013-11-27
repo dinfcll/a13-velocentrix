@@ -24,7 +24,7 @@
         mysql_connect($host,$user,$password) or die ("Impossible de se connecter");
         mysql_select_db($bd) or die ("Impossible de se connecter à la base de données");
 
-        $query = "SELECT * FROM Nousjoindre";
+        $query = "SELECT * FROM Informations";
         $result = mysql_query($query);
 
         $row = mysql_fetch_array($result);
@@ -35,12 +35,9 @@
 
                 <div class="span3">
                     <center>
-                        <h1 style="position: relative;"><font color="#88a65e">Informations</font></h1>
+                        <?php echo $row['Titre'] ?>
                         </br>
-                        <h5><font color="black">Adresse : 798, 12e rue, Québec, G1J 2M8</font></h5>
-                        <h5><font color="black">Horaire d'atelier : </font></h5>
-                        <h5><font color="black">Lundi au vendredi : 8h00 à 16h00</font></h5>
-                        <h5><font color="black">Samedi et dimanche : 12h00 à 16h00</font></h5>
+                        <?php echo $row['Paragraphe'] ?>
                         </br>
                         <a href="https://www.google.ca/maps?q=798,+12e+rue,+Qu%C3%A9bec,+G1J+2M8&hl=fr&ie=UTF8&ll=46.82846,-71.226833&spn=0.012684,0.026479&sll=46.79095,-71.117575&sspn=0.406183,0.847321&hnear=798+12e+Rue,+Qu%C3%A9bec,+Communaut%C3%A9-Urbaine-de-Qu%C3%A9bec,+Qu%C3%A9bec+G1J&t=m&z=16"
                            style="color:#88a65e;">Lien vers google maps</a>
