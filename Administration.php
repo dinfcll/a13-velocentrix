@@ -154,6 +154,20 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                  <input style='margin-top: 15px;' class='btn' id='boutonadmin' type='submit' name='modifier' value='Modifier le mot de passe'/>
                  </form></div></div>";
             }
+            elseif($_POST['Query'] == "Proposition"){
+                $query = "SELECT * FROM Proposition";
+                $result = mysql_query($query);
+                $row = mysql_fetch_array($result);
+                if($row > 0){
+                echo "<div class='span9'>
+                 <center><h4>Liste des propositions</h4></center>";
+                 echo "<h5>Proposition:</h5><select name='proposition'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idProposition']."'>"."Prénom:".$row['Prenom']."/Nom:".$row['Nom']."/Courriel".$row['Courriel']."/Sujet:".$row['Sujet']."</option>";} echo "</select>";
+                 echo "</div>";
+                }
+                else{
+                    echo "<div class='span9'><center><h4>Il n'y a pas de propositions</h4></center></div>";
+                }
+            }
             elseif($_POST['Query'])
                 {
                     $table = $_POST['Query'];
@@ -220,7 +234,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         <center><h5><font color='white'>Propositions</font></h5></center>
                     </div>
                     <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Proposition'/><input class='btn' id='boutonadmin' type='submit' name='Consultation' value='Consulter les propositions'/></form><br/>
-                    <?php if($_POST['Query'] && $_POST['Query'] != "Gestion des accès administrateurs")
+                    <?php if($_POST['Query'] && $_POST['Query'] != "Gestion des accès administrateurs" && $_POST['Query'] != "Proposition")
                     {
                         echo "<h5>Quoi modifier ?</h5>";
                         echo "<a class='fancybox' rel='group' href='img/Accueil.png'><img src='img/Accueil.png' alt='' /></a>";
