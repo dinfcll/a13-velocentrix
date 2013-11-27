@@ -159,6 +159,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                 $result = mysql_query($query);
                 $row = mysql_fetch_array($result);
                 if($row > 0){
+                    $result = mysql_query($query);
                 echo "<div class='span9'>
                  <center><h4>Liste des propositions</h4></center>";
                  echo "<h5>Proposition:</h5><select name='proposition'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idProposition']."'>"."Prénom:".$row['Prenom']."/Nom:".$row['Nom']."/Courriel".$row['Courriel']."/Sujet:".$row['Sujet']."</option>";} echo "</select>";
