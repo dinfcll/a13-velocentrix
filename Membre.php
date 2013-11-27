@@ -90,7 +90,9 @@
                         <?php
                             if($_POST['valid'])
                             {
-
+                                $prenom = $_POST['prenom'];
+                                $nom = $_POST['nom'];
+                                $email = $_POST['email'];
 
                                 echo '<h4>Votre abonnement à été complété avec succès avec les informations suivantes : </h4>';
                                 echo '<h4>Prénom : '.$_POST['prenom'].'</h4>';
