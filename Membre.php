@@ -28,10 +28,6 @@
         mysql_connect($host,$user,$password) or die ("Impossible de se connecter");
         mysql_select_db($bd) or die ("Impossible de se connecter à la base de données");
 
-        $prenom = $_POST['prenom'];
-        $nom = $_POST['nom'];
-        $email = $_POST['email'];
-
         ?>
 
         <div class="contenu border-radius">
@@ -40,21 +36,11 @@
                     <center>
 
                         <?php
-                            if($prenom && $nom && $email)
-                            {
-                               echo('
-                                    <h4>Pour effectuer le paiement, cliquez sur le bouton "Pay with card"</h4>
-                                    </br></br>
-                                    <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-                                    data-key="');
-                               echo $stripe['publishable_key'];
-                               echo('" data-description="Abonnement annuel"></script>');
-                               header('Location: Membre.php');
+                                $prenom = $_POST['prenom'];
+                                $nom = $_POST['nom'];
+                                $email = $_POST['email'];
 
-                            }
 
-                            else
-                            {
                                 echo('
                                       <h2 style="color: #88a65e">Devenir membre vous intéresse?</h2>
                                       </br>
@@ -63,7 +49,7 @@
                                           Ce bouton vous menera ensuite vers la page de paiement.</h4>
                                       </br>
 
-                                      <form action="Membre.php" method="post">
+                                      <form action="Membre_conf.php" method="post">
                                             <b><h4>Prénom</h4></b>
                                             <input style="height: 30px" type="text" name="prenom" size = "40">
                                             <b><h4>Nom</b></h4>
@@ -75,7 +61,6 @@
                                        </form>
                                        <p style="color: red;">***Tous les champs sont obligatoire***</p>
                                      ');
-                            }
                         ?>
 
                     </center>
@@ -101,8 +86,23 @@
                 <div class="span12">
                     <center>
                         <?php
-                            if($token)
+                            if($_POST['valid'])
                             {
+                                require_once(dirname(__FILE__) . '/stripe.php');
+
+                                $token = $_POST['stripeToken'];
+
+                                $customer = Stripe_Customer::create(array(
+                                    'email' => $email,
+                                    'card' => $token
+                                ));
+
+
+                                $charge = Stripe_Charge::create(array(
+                                    'customer' => $customer->id,
+                                    'amount' => 2000,
+                                    'currency' => "cad"
+                                ));
 
                                 echo '<h4>Votre abonnement à été complété avec succès avec les informations suivantes : </h4>';
                                 echo '<h4>Prénom : '.$_POST['prenom'].'</h4>';
