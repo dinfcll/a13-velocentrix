@@ -117,7 +117,7 @@
                         <!-- slide open -->
                         <div class="open1">
                                 <ul>
-                                    <li class="blue l3 a18"><a href="Ateliers.php">18:00 Atelier du Samedi</a></li>
+                                    <li class="blue l3 a18"><a style="color: #ffffff" href="Ateliers.php">18:00 Atelier du Samedi</a></li>
                                 </ul>
                         </div>
                         <!-- slide closed -->
@@ -168,7 +168,7 @@
                         <!-- slide open -->
                         <div class="open1">
                             <ul>
-                                <li class="blue l3 a18"><a href="Ateliers.php">18:00 Atelier du Mercredi</a></li>
+                                <li class="blue l3 a18"><a style="color: #ffffff" href="Ateliers.php">18:00 Atelier du Mercredi</a></li>
                             </ul>
                         </div>
                         <!-- slide closed -->
@@ -205,7 +205,7 @@
                         <!-- slide open -->
                         <div class="open1">
                             <ul>
-                                <li class="blue l3 a18"><a href="Ateliers.php">18:00 Atelier du Samedi</a></li>
+                                <li class="blue l3 a18"><a style="color: #ffffff" href="Ateliers.php">18:00 Atelier du Samedi</a></li>
                             </ul>
                         </div>
                         <!-- slide closed -->
@@ -254,7 +254,7 @@
                         <!-- slide open -->
                         <div class="open1">
                             <ul>
-                                <li class="blue l3 a18"><a href="Ateliers.php">18:00 Atelier du Mercredi</a></li>
+                                <li class="blue l3 a18"><a style="color: #ffffff" href="Ateliers.php">18:00 Atelier du Mercredi</a></li>
                             </ul>
                         </div>
                         <!-- slide closed -->
@@ -291,7 +291,7 @@
                         <!-- slide open -->
                         <div class="open1">
                             <ul>
-                                <li class="blue l3 a18"><a href="Ateliers.php">18:00 Atelier du Samedi</a></li>
+                                <li class="blue l3 a18"><a style="color: #ffffff" href="Ateliers.php">18:00 Atelier du Samedi</a></li>
                             </ul>
                         </div>
                         <!-- slide closed -->
@@ -342,7 +342,7 @@
                         <!-- slide open -->
                         <div class="open1">
                             <ul>
-                                <li class="blue l3 a18"><a href="Ateliers.php">18:00 Atelier du Mercredi</a></li>
+                                <li class="blue l3 a18"><a style="color: #ffffff" href="Ateliers.php">18:00 Atelier du Mercredi</a></li>
                             </ul>
                         </div>
                         <!-- slide closed -->
@@ -379,7 +379,7 @@
                         <!-- slide open -->
                         <div class="open1">
                             <ul>
-                                <li class="blue l3 a18"><a href="Ateliers.php">18:00 Atelier du Samedi</a></li>
+                                <li class="blue l3 a18"><a style="color: #ffffff" href="Ateliers.php">18:00 Atelier du Samedi</a></li>
                             </ul>
                         </div>
                         <!-- slide closed -->
@@ -430,7 +430,7 @@
                         <!-- slide open -->
                         <div class="open1">
                             <ul>
-                                <li class="blue l3 a18"><a href="Ateliers.php">18:00 Atelier du Mercredi</a></li>
+                                <li class="blue l3 a18"><a style="color: #ffffff" href="Ateliers.php">18:00 Atelier du Mercredi</a></li>
                             </ul>
                         </div>
                         <!-- slide closed -->
@@ -469,7 +469,7 @@
                         <!-- slide open -->
                         <div class="open1">
                             <ul>
-                                <li class="blue l3 a18"><a href="Ateliers.php">18:00 Atelier du Samedi</a></li>
+                                <li class="blue l3 a18"><a style="color: #ffffff" href="Ateliers.php">18:00 Atelier du Samedi</a></li>
                             </ul>
                         </div>
                         <!-- slide closed -->
@@ -477,15 +477,10 @@
                     <div class="day brn">
                         <div class="daybar"><p>1</p></div>
                         <div class="dots">
-                            <ul>
-                                <li class="green"></li>
-                            </ul>
                         </div>
                         <!-- slide open -->
                         <div class="open1">
-                            <ul>
-                                <li class="green l3 a20"><p>20:00 Quiz night</p></li>
-                            </ul>
+
                         </div>
                         <!-- slide closed -->
                     </div>
