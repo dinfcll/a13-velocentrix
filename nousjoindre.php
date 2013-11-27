@@ -24,7 +24,7 @@
         mysql_connect($host,$user,$password) or die ("Impossible de se connecter");
         mysql_select_db($bd) or die ("Impossible de se connecter à la base de données");
 
-        $query = "SELECT * FROM Nousjoindre";
+        $query = "SELECT * FROM Informations";
         $result = mysql_query($query);
 
         $row = mysql_fetch_array($result);
@@ -35,8 +35,10 @@
 
                 <div class="span3">
                     <center>
+                        <?php echo $row['Titre'] ?>
                         <h1 style="position: relative;"><font color="#88a65e">Informations</font></h1>
                         </br>
+                        <?php echo $row['Paragraphe'] ?>
                         <h5><font color="black">Adresse : 798, 12e rue, Québec, G1J 2M8</font></h5>
                         <h5><font color="black">Horaire d'atelier : </font></h5>
                         <h5><font color="black">Lundi au vendredi : 8h00 à 16h00</font></h5>
