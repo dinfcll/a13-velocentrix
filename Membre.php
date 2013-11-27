@@ -49,8 +49,9 @@
                                     data-key="');
                                echo $stripe['publishable_key'];
                                echo('" data-description="Abonnement annuel"></script>');
+                               header('Location: Membre.php');
 
-                        }
+                            }
 
                             else
                             {
