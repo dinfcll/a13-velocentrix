@@ -48,31 +48,7 @@
                                     <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
                                     data-key="');
                                echo $stripe['publishable_key'];
-                               echo('" data-amount="5000" data-description="Abonnement annuel"></script>');
-
-
-
-                                echo "a";
-                                require_once(dirname(__FILE__) . '/stripe.php');
-                                echo "b";
-                                $token = $_POST['stripeToken'];
-                                echo "c";
-                                $customer = Stripe_Customer::create(array(
-                                    'email' => $email,
-                                    'card' => $token
-                                ));
-                                echo "d";
-
-                                $charge = Stripe_Charge::create(array(
-                                    'customer' => $customer->id,
-                                    'amount' => 2000,
-                                    'currency' => "cad"
-                                ));
-                                echo "e";
-
-
-
-
+                               echo('" data-description="Abonnement annuel"></script>');
 
                         }
 
@@ -124,7 +100,7 @@
                 <div class="span12">
                     <center>
                         <?php
-                            if($prenom && $nom && $email)
+                            if($token)
                             {
 
                                 echo '<h4>Votre abonnement à été complété avec succès avec les informations suivantes : </h4>';
@@ -151,3 +127,23 @@ include("Footer.php")
 ?>
 </body>
 </html>
+
+<?php
+    echo "a";
+    require_once(dirname(__FILE__) . '/stripe.php');
+    echo "b";
+    $token = $_POST['stripeToken'];
+    echo "c";
+    $customer = Stripe_Customer::create(array(
+        'email' => $email,
+        'card' => $token
+    ));
+    echo "d";
+
+    $charge = Stripe_Charge::create(array(
+        'customer' => $customer->id,
+        'amount' => 2000,
+        'currency' => "cad"
+    ));
+    echo "e";
+?>
