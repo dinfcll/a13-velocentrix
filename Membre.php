@@ -47,7 +47,7 @@
                                           Ce bouton vous menera ensuite vers la page de paiement.</h4>
                                       </br>
 
-                                      <form action="Membre_conf.php" method="post">
+                                      <form action="Membre.php" method="post">
                                             <b><h4>Prénom</h4></b>
                                             <input style="height: 30px" type="text" name="prenom" size = "40">
                                             <b><h4>Nom</b></h4>
@@ -55,11 +55,14 @@
                                             <b><h4>Adresse email</h4></b>
                                             <input style="height: 30px" type = "text" name="email" size="40">
                                             </br></br>
-                                            <input type="submit" class="btn btn-primary" value="Continuer">
-                                       </form>
-                                       <p style="color: red;">***Tous les champs sont obligatoire***</p>
-                                     ');
+                                            <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                                                        data-key="');
+                                echo $stripe['publishable_key'];
+                                echo('" data-description="Abonnement annuel"></script>
+                                    </form>
+                                    ');
                         ?>
+                        <p style="color: red;">***Tous les champs sont obligatoire***</p>
 
                     </center>
 
@@ -112,3 +115,21 @@ include("Footer.php")
 ?>
 </body>
 </html>
+<?php
+    require_once(dirname(__FILE__) . '/stripe.php');
+
+    $token = $_POST['stripeToken'];
+
+    $customer = Stripe_Customer::create(array(
+    'email' => $email,
+    'card' => $token
+    ));
+
+
+    $charge = Stripe_Charge::create(array(
+    'customer' => $customer->id,
+    'amount' => 2000,
+    'currency' => "cad"
+    ));
+?>
+
