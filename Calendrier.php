@@ -13,10 +13,10 @@
             block.addClass("clickable");
             block.hover(function(){window.status = $(this)}, function(){window.status = ""});
 
-            $('.open').hide();
+            $('.open1').hide();
             block.click(
                 function() {
-                    $(this).parents('div:eq(0)').find('.open').slideToggle('fast');
+                    $(this).parents('div:eq(0)').find('.open1').slideToggle('fast');
                 }
             );}
         $(document).ready(function() {initMenu();});
@@ -55,7 +55,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                         </div>
                         <!-- slide closed -->
                     </div>
@@ -67,7 +67,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                         </div>
                         <!-- slide closed -->
                     </div>
@@ -79,7 +79,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                         </div>
                         <!-- slide closed -->
                     </div>
@@ -91,7 +91,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                         </div>
                         <!-- slide closed -->
                     </div>
@@ -103,7 +103,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                         </div>
                         <!-- slide closed -->
                     </div>
@@ -115,7 +115,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                             </ul>
                         </div>
@@ -130,7 +130,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="yellow l2 a11"><p>11:00 studying</p></li>
                                 <li class="green l3 a1"><p>14:00 Stratego-game</p></li>
@@ -150,7 +150,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="yellow l1 a13"><p>13:00 Math</p></li>
                                 <li class="green l2 a5"><p>19:00 gathering</p></li>
@@ -166,7 +166,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="red l2 a19"><p>19:00 Practice</p></li>
                             </ul>
@@ -183,7 +183,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="yellow l1 a8"><p>08:00 Biology</p></li>
                                 <li class="yellow l1 a1"><p>10:00 ICT</p></li>
@@ -200,7 +200,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="red l2 a19"><p>19:00 Practice</p></li>
                             </ul>
@@ -216,7 +216,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="yellow l3 a10"><p>10:00 Athletics</p></li>
                                 <li class="blue l3 a4"><p>17:00 Date with ...</p></li>
@@ -233,7 +233,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="red l3 a13"><p>13:00 Competition: Red Hawks - Blue Foxes</p></li>
                                 <li class="blue l4 a2"><p>18:00 Cinema: Tin Tin </p></li>
@@ -250,7 +250,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="yellow l2 a11"><p>11:00 studying</p></li>
                                 <li class="green l3 a1"><p>14:00 Door 2 Door cookies</p></li>
@@ -269,7 +269,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="yellow l2 a9"><p>09:00 History project</p></li>
                             </ul>
@@ -285,7 +285,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="yellow l1 a13"><p>13:00 English task</p></li>
                                 <li class="red l2 a5"><p>19:00 Practice</p></li>
@@ -302,7 +302,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="blue l2 a17"><p>17:00 iPhone delivery</p></li>
                                 <li class="green l3 a1"><p>20:00 gathering</p></li>
@@ -318,7 +318,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="red l2 a19"><p>19:00 Practice</p></li>
                             </ul>
@@ -333,7 +333,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="yellow l2 a8"><p>08:00 Spanish</p></li>
                             </ul>
@@ -349,7 +349,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="red l3 a13"><p>13:00 Competition: Green Snakes - Red Hawks</p></li>
                                 <li class="blue l4 a4"><p>20:00 Snowparty</p></li>
@@ -365,7 +365,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="green l5 a14"><p>14:00 Survival</p></li>
                             </ul>
@@ -384,7 +384,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="yellow l1 a13"><p>13:00 Math test</p></li>
                                 <li class="green l2 a5"><p>19:00 gathering</p></li>
@@ -400,7 +400,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="red l2 a19"><p>19:00 Practice</p></li>
                             </ul>
@@ -416,7 +416,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="yellow l2 a8"><p>08:00 English reading</p></li>
                                 <li class="yellow l1 a1"><p>11:00 Physics task</p></li>
@@ -432,7 +432,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="red l2 a19"><p>19:00 Practice</p></li>
                             </ul>
@@ -447,7 +447,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="blue l3 a20"><p>20:00 Zoo Night opening!</p></li>
                             </ul>
@@ -462,7 +462,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="red l3 a13"><p>13:00 Competition: Red Hawks - Black Ravens</p></li>
                             </ul>
@@ -477,7 +477,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="yellow l3 a9"><p>09:00 studying</p></li>
                             </ul>
@@ -495,7 +495,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="yellow l2 a13"><p>13:00 Math test</p></li>
                             </ul>
@@ -510,7 +510,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="red l2 a19"><p>19:00 Practice</p></li>
                             </ul>
@@ -525,7 +525,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="green l3 a20"><p>20:00 gathering</p></li>
                             </ul>
@@ -540,7 +540,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="red l2 a19"><p>19:00 Practice</p></li>
                             </ul>
@@ -554,7 +554,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                             </ul>
                         </div>
@@ -568,7 +568,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="blue l3 a10"><p>10:00 Christmas decoration</p></li>
                             </ul>
@@ -583,7 +583,7 @@
                             </ul>
                         </div>
                         <!-- slide open -->
-                        <div class="open">
+                        <div class="open1">
                             <ul>
                                 <li class="green l3 a20"><p>20:00 Quiz night</p></li>
                             </ul>
