@@ -46,24 +46,10 @@
                                     <h4>Pour effectuer le paiement, cliquez sur le bouton "Pay with card"</h4>
                                     </br></br>
                                     <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-                                    data-key="<?php echo $stripe[\'publishable_key\']; ?>"
-                                    data-description="Abonnement annuel"></script>'
-                                    );
+                                    data-key="');
+                               echo $stripe['publishable_key'];
+                               echo('" data-amount="5000" data-description="Abonnement annuel"></script>');
 
-                                require_once(dirname(__FILE__) . '/stripe.php');
-
-                                $token = $_POST['stripeToken'];
-
-                                $customer = Stripe_Customer::create(array(
-                                    'email' => $_POST['email'],
-                                    'card' => $token
-                                ));
-
-                                $charge = Stripe_Charge::create(array(
-                                    'customer' => $customer->id,
-                                    'amount' => 2000,
-                                    'currency' => 'cad'
-                                ));
                             }
 
                             else
@@ -87,7 +73,7 @@
                                             <input type="submit" class="btn btn-primary" value="Continuer">
                                        </form>
                                        <p style="color: red;">***Tous les champs sont obligatoire***</p>
-                                            ');
+                                     ');
                             }
                         ?>
 
@@ -114,7 +100,7 @@
                 <div class="span12">
                     <center>
                         <?php
-                            if (isset($_POST['email']) && isset($_POST['prenom']) && isset($_POST['nom']))
+                            if($prenom && $nom && $email)
                             {
 
                                 echo '<h4>Votre abonnement à été complété avec succès avec les informations suivantes : </h4>';
@@ -141,5 +127,26 @@ include("Footer.php")
 ?>
 </body>
 </html>
+
+<?php
+
+    echo "a";
+    require_once(dirname(__FILE__) . '/stripe.php');
+    echo "b";
+    $token = $_POST['stripeToken'];
+    echo "c";
+    $customer = Stripe_Customer::create(array(
+    'email' => $email,
+    'card' => $token
+    ));
+    echo "d";
+
+    $charge = Stripe_Charge::create(array(
+    'customer' => $customer->id,
+    'amount' => 2000,
+    'currency' => 'cad'
+    ));
+    echo "e";
+?>
 
 
