@@ -55,6 +55,7 @@
                                             <b><h4>Adresse email</h4></b>
                                             <input style="height: 30px" type = "text" name="email" size="40">
                                             </br></br>
+                                            <input type="hidden" value="yes" name="valid">
                                             <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
                                                         data-key="');
                                 echo $stripe['publishable_key'];
