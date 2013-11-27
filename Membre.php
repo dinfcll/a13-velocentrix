@@ -86,21 +86,7 @@
                         <?php
                             if($_POST['valid'])
                             {
-                                require_once(dirname(__FILE__) . '/stripe.php');
 
-                                $token = $_POST['stripeToken'];
-
-                                $customer = Stripe_Customer::create(array(
-                                    'email' => $email,
-                                    'card' => $token
-                                ));
-
-
-                                $charge = Stripe_Charge::create(array(
-                                    'customer' => $customer->id,
-                                    'amount' => 2000,
-                                    'currency' => "cad"
-                                ));
 
                                 echo '<h4>Votre abonnement à été complété avec succès avec les informations suivantes : </h4>';
                                 echo '<h4>Prénom : '.$_POST['prenom'].'</h4>';
