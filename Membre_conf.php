@@ -14,6 +14,9 @@
     <body>
     <div id="wrap">
         <div class="container-fluid">
+            <?php
+            include("Header.html");
+            ?>
 
             <div class="contenu border-radius">
                 <div class="row-fluid">
@@ -21,18 +24,26 @@
                         <center>
                             <?php
 
+                            $prenom = $_POST['prenom'];
+                            $nom = $_POST['nom'];
+                            $email = $_POST['email'];
 
+                            echo $prenom;
+                            echo $nom;
+                            echo $email;
 
                             echo('
                                       <h4>Cliquez sur le bouton "Pay with card" pour effectuer le paiement</h4>
                                       </br>
-                                      <form action="Membre.php" method="post">
-                                            <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-                                                        data-key="');
+                                      <form action="Membre_conf.php" method="post">
+                                      <input type="hidden" name="valid" value="yes">
+                                      <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                                      data-key="'
+                                );
                             echo $stripe['publishable_key'];
-                            echo('" data-description="Abonnement annuel"></script>
-                                    </form>
-                                    ');
+                            echo('    " data-description="Abonnement annuel"></script>
+                                      </form>
+                                ');
                             ?>
                         </center>
 
@@ -73,9 +84,6 @@
                             ?>
                         </center>
                     </div>
-
-
-
                 </div>
             </div>
             l
@@ -87,7 +95,9 @@
     ?>
     </body>
     </html>
-    <?php
+
+<?php
+
     require_once(dirname(__FILE__) . '/stripe.php');
 
     $token = $_POST['stripeToken'];
@@ -103,4 +113,6 @@
         'amount' => 2000,
         'currency' => "cad"
     ));
-    ?>
+
+
+?>

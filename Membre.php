@@ -58,16 +58,15 @@
                                             <b><h4>Adresse email</h4></b>
                                             <input style="height: 30px" type = "text" name="email" size="40">
                                             </br></br>
-                                            <input type="submit" value="Continuer" name="continuer"
-                                            <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-                                                        data-key="');
-                                echo $stripe['publishable_key'];
-                                echo('" data-description="Abonnement annuel"></script>
+                                            <input type="submit" class="btn btn-primary" value="Continuer">
                                     </form>
+                                    <p style="color: red;">***Tous les champs sont obligatoire***</p>
                                     ');
                             }
+
+                            echo "1";
                         ?>
-                        <p style="color: red;">***Tous les champs sont obligatoire***</p>
+
 
                     </center>
 
@@ -88,6 +87,8 @@
                         <h4>Des rabais de 10% dans la boutique Louis Garneau</h4>
                     </center>
                 </div>
+
+
 
 
 
