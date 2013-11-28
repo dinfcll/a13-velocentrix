@@ -185,7 +185,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     }
                     elseif($_POST['Action'])
                     {
-                        $id = $_POST['Supression'];
+                        $id = $_POST['Suppression'];
                         echo $id;
                         $query="DELETE FROM Proposition WHERE idProposition='$id'";
                         mysql_query($query);
