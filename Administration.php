@@ -180,7 +180,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         echo "<textarea style='width: 100%;'>".$proposition."</textarea>";
                         echo"<form action='Administration.php' method='POST'>
                              <center>
-                             <input type='hidden' name='Suppression' value=".$id.">
+                             <input type='hidden' name='Suppression' value='".$id."'>
                              <input class='btn' id='boutonadmin' style='margin-bottom: 30px;' type='submit' name='Action' value='Supprimer la proposition'></center></form>";
                     }
                     elseif($_POST['Action'])
