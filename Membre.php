@@ -43,8 +43,8 @@
                                       <h2 style="color: #88a65e">Devenir membre vous intéresse?</h2>
                                       </br>
                                       <h4>Le prix de l\'abonnement annuel est de 20$</h4>
-                                      <h4>Pour devenir membre, il suffit de remplir le formulaire suivant et de cliquer sur "Continuer".
-                                          Ce bouton vous menera ensuite vers la page de paiement.</h4>
+                                      <h4>Pour devenir membre, il suffit de remplir le formulaire suivant et de cliquer sur "Pay with card".
+                                          Par la suite, une validation sera affichée au bas de cette page après avoir payé avec votre carte de crédit.</h4>
                                       </br>
 
                                       <form action="Membre.php" method="post">
@@ -55,6 +55,7 @@
                                             <b><h4>Adresse email</h4></b>
                                             <input style="height: 30px" type = "text" name="email" size="40">
                                             </br></br>
+                                            <input type="hidden" value="yes" name="valid">
                                             <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
                                                         data-key="');
                                 echo $stripe['publishable_key'];
@@ -89,7 +90,9 @@
                         <?php
                             if($_POST['valid'])
                             {
-
+                                $prenom = $_POST['prenom'];
+                                $nom = $_POST['nom'];
+                                $email = $_POST['email'];
 
                                 echo '<h4>Votre abonnement à été complété avec succès avec les informations suivantes : </h4>';
                                 echo '<h4>Prénom : '.$_POST['prenom'].'</h4>';
