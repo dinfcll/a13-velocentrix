@@ -162,7 +162,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     $result = mysql_query($query);
                 echo "<div class='span9'>
                 <form action='Administration.php' method='POST'>";
-                 echo "<h5> Listes des propositions:</h5><select style='width: 100%;' name='proposition'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idProposition']."'>"."<strong>Prénom:</strong>".$row['Prenom']."  Nom:".$row['Nom']."  Courriel".$row['Courriel']."  Sujet:".$row['Sujet']."</option>";} echo "</select>";
+                 echo "<h5> Listes des propositions:</h5><select style='width: 100%;' name='proposition'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idProposition']."'>"."<strong>Prénom:</strong>".$row['Prenom']."  Nom:".$row['Nom']."  Date:".date_timestamp_get($row['Temps'])."  Sujet:".$row['Sujet']."</option>";} echo "</select>";
 
                  echo "<center><input class='btn' id='boutonadmin' type='submit' name='Action' value='Consulter la proposition'></center>
                  </div>";
