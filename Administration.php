@@ -24,7 +24,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
 if($_POST['Query'] == "Deconnexion")
 {
     session_destroy();
-    header ("Location=login.php");
+    header ("Location: login.php");
 }
 
 if($_POST['Authentification'])
@@ -36,7 +36,7 @@ if($_POST['Authentification'])
     $row = mysql_fetch_array($result);
     if($row < 1)
     {
-        header ("Location=login.php");
+        header ("Location: login.php");
     }
     else
     {
@@ -45,7 +45,7 @@ if($_POST['Authentification'])
     }
 }
 elseif(!$_SESSION['Utilisateur']){
-    header ("Location=login.php");
+    header ("Location: login.php");
 }
 
 ?>
