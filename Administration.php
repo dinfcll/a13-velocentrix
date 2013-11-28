@@ -35,7 +35,7 @@ if($_POST['Authentification'])
 }
 else{
     echo "<h1 style='color: red;'>Vous devez vous connecter</h1>";
-    header ("Refresh: 3;URL=Login.php");
+    header ("Refresh: ;URL=login.php");
 }
 
 ?>
