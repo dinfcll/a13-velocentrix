@@ -44,6 +44,7 @@ if($_POST['Authentification'])
 }
 elseif(!$_SESSION['Utilisateur']){
     echo "erreur";
+    echo $_SESSION['Utilisateur'];
     header ("Refresh: 0;URL=login.php");
 }
 
