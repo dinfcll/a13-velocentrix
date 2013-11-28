@@ -177,7 +177,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                              <center><h5>Sujet:</h5>".$sujet."<h5>Date:</h5>".$date."</center>";
                         echo "<textarea style='width: 100%;'>".$proposition."</textarea>";
                     }
-                 echo "<center><input class='btn' id='boutonadmin' type='submit' name='Action' value='Consulter la proposition'></center>
+                 echo "<center><input class='btn' id='boutonadmin' type='submit' name='Action' value='Consulter la proposition'></center></form>
                  </div>";
                 }
                 else{
