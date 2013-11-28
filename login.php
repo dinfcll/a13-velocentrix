@@ -26,6 +26,11 @@
 
         $row = mysql_fetch_array($result);
 
+        if($_SESSION['Utilisateur'])
+        {
+            header ("Refresh: 0;URL=Administration.php");
+        }
+
         ?>
         <div class="contenu border-radius">
             <div class="row-fluid">
