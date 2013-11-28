@@ -163,7 +163,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                 echo "<div class='span9'>
                 <form action='Administration.php' method='POST'>";
                  echo "<h5> Listes des propositions:</h5><select style='width: 100%;' name='proposition'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idProposition']."'>"."<strong>Prénom:</strong>".$row['Prenom']."  Nom:".$row['Nom']."  Date:".$row['Temps']."  Sujet:".$row['Sujet']."</option>";} echo "</select>";
-                    if($_POST['Action']){
+                    if($_POST['Action'] && !$_POST['Suppression']){
                         $id = $_POST['proposition'];
                         $query = "SELECT * FROM Proposition WHERE idProposition='$id'";
                         $result = mysql_query($query);
@@ -173,9 +173,22 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         $sujet = $row['Sujet'];
                         $date = $row['Temps'];
                         $proposition = $row['Proposition'];
-                        echo"<center><h5>Prenom:</h5>".$prenom."<h5>Nom:</h5>".$nom."</center>
-                             <center><h5>Sujet:</h5>".$sujet."<h5>Date:</h5>".$date."</center>";
+                        $courriel = $row['Courriel'];
+                        echo"<div class='span3'><center><h5>Prenom:</h5>".$prenom."<h5>Nom:</h5>".$nom."<center></div>
+                             <div class='span3'><center><h5>Sujet:</h5>".$sujet."<h5>Date:</h5>".$date."</center></div>
+                             <div class='span9'><center><h5>Courriel:</h5>".$courriel."</center></div>";
                         echo "<textarea style='width: 100%;'>".$proposition."</textarea>";
+                        echo"<form action='Administration.php' method='POST'>
+                             <center>
+                             <input type='hidden' name='Suppression' value=".$id.">
+                             <input class='btn' id='boutonadmin' type='submit' name='Action' value='Supprimer la proposition'></center></form>";
+                    }
+                    elseif($_POST['Action'])
+                    {
+                        $id = $_POST['Supression'];
+                        $query="DELETE * FROM Proposition WHERE idProposition='$id'";
+                        mysql_query($query);
+                        echo "<center><h5 style='color: green;'>Proposition supprimée avec succès!</h5></center>";
                     }
                  echo "<center><input class='btn' id='boutonadmin' type='submit' name='Action' value='Consulter la proposition'></center></form>
                  </div>";
