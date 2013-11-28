@@ -58,7 +58,7 @@
                                             <b><h4>Adresse email</h4></b>
                                             <input style="height: 30px" type = "text" name="email" size="40">
                                             </br></br>
-                                            <button type="button" class="btn btn-primary" value="Continuer"></button>
+                                            <input type="submit" class="btn btn-primary" value="Soumettre">
                                     </form>
                                     <p style="color: red;">***Tous les champs sont obligatoire***</p>
                                     ');
