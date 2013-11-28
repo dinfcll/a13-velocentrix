@@ -177,7 +177,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         echo"<div class='span2'><center><h5>Prenom:</h5>".$prenom."</div><div class='span2'><h5>Nom:</h5>".$nom."<center></div>
                              <div class='span2'><center><h5>Courriel:</h5>".$courriel."</div><div class='span2'><h5>Date:</h5>".$date."</center></div>
                              <div class='span9'><center><h5>Sujet:</h5>".$sujet."</center></div>";
-                        echo "<textarea style='width: 100%;'>".$proposition."</textarea>";
+                        echo "<textarea style='width: 100%;height: 10%;'>".$proposition."</textarea>";
                         echo"<form action='Administration.php' method='POST'>
                              <center>
                              <input type='hidden' name='Suppression' value='".$id."'>
