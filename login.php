@@ -39,6 +39,7 @@
                             <b><p>Mot de passe : </p></b>
                             <input style="height: 30px" type="text" name="password" size="40">
                             </br>
+                            <input type='hidden' name='Authentification' value='Authentification'/>
                             <input class="btn btn-primary" type="submit" value="Entrer">
                         </form>
                     </center>

@@ -20,6 +20,24 @@ $bd = "a13equipe2";
 mysql_connect($host,$user,$password) or die ("Impossible de se connecter");
 mysql_select_db($bd) or die ("Impossible de se connecter à la base de données");
 
+if($_POST['Authentification'])
+{
+    $username = $_POST['user'];
+    $password = $_POST['password'];
+    $query = mysql_real_escape_string("SELECT * FROM Utilisateurs WHERE Utilisateur='$username' AND Password='$password'");
+    $result = mysql_query($query);
+    $row = mysql_fetch_array($result);
+    if($row < 1)
+    {
+        echo "<h1 style='color: red;'>Mauvais nom d'utilisateur et/ou mot de passe</h1>";
+        header ("Refresh: 3;URL=Login.php");
+    }
+}
+else{
+    echo "<h1 style='color: red;'>Vous devez vous connecter</h1>";
+    header ("Refresh: 3;URL=Login.php");
+}
+
 ?>
 <div id="wrap">
     <div class="container-fluid">
