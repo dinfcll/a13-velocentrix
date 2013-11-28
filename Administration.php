@@ -301,7 +301,7 @@ elseif(!$_SESSION['Utilisateur']){
                     <?php if($_POST['Query'] && $_POST['Query'] != "Gestion des accès administrateurs" && $_POST['Query'] != "Proposition")
                     {
                         echo "<h5>Quoi modifier ?</h5>";
-                        echo "<a class='fancybox' rel='group' href='img/Accueil.png'><img src='img/Accueil.png' alt='' /></a>";
+                        echo "<a class='fancybox' rel='group' href='img/".$_POST['Query'].".png'><img src='img/".$_POST['Query'].".png' alt='' /></a>";
                     }?>
                     </div>
 
