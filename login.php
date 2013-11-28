@@ -28,7 +28,7 @@
 
         if($_SESSION['Utilisateur'])
         {
-            header ("Refresh: 0;URL=Administration.php");
+            header ("Location: Administration.php");
         }
 
         ?>
