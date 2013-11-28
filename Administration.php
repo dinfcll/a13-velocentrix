@@ -171,7 +171,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         $nom = $row['Nom'];
                         $prenom = $row['Prenom'];
                         $sujet = $row['Sujet'];
-                        $date = date_timestamp_get($row['Temps']);
+                        $date = $row['Temps'];
                         $proposition = $row['Proposition'];
                         echo"<center><h5>Prenom:</h5>".$prenom."<h5>Nom:</h5>".$nom."</center>
                              <center><h5>Sujet:</h5>".$sujet."<h5>Date:</h5>".$date."</center>";
