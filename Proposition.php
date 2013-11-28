@@ -28,8 +28,7 @@
         $nom = $_POST['nom'];
         $email = $_POST['email'];
         $sujet = $_POST['sujet'];
-        $date = date_create();
-        $temps = date_timestamp_get($date);
+        $time = time(); $date = date('Y-m-d H:i:s',$time);
         $proposition = $_POST['proposition'];
 
         ?>
@@ -66,7 +65,7 @@
                     <?php
                     if($prenom && $nom && $email && $sujet && $proposition)
                         {
-                        $query = "INSERT INTO $table (Prenom, Nom, Courriel, Sujet, Proposition,Temps) VALUES ('$prenom','$nom','$email','$sujet','$proposition','$temps')";
+                        $query = "INSERT INTO $table (Prenom, Nom, Courriel, Sujet, Proposition,Temps) VALUES ('$prenom','$nom','$email','$sujet','$proposition','$date')";
                         mysql_query($query);
                         echo "<p style='color: green'>Votre proposition d'événement a bien été envoyé. Merci</p>";
                         }
