@@ -121,7 +121,7 @@ elseif(!$_SESSION['Utilisateur']){
                         $Utilisateur = $_POST['nom'];
                         $Password = md5($_POST['ancien']);
                         $Nouveau = md5($_POST['nouveau']);
-                        $Confirmation = $_POST['confirmation'];
+                        $Confirmation = md5($_POST['confirmation']);
                         if($Nouveau == $Confirmation){
                             $query = "SELECT * FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
                             $result = mysql_query($query);
