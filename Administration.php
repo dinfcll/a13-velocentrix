@@ -176,7 +176,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         $courriel = $row['Courriel'];
                         echo"<div class='span2'><center><h5>Prenom:</h5>".$prenom."</center></div><div class='span2'><center><h5>Nom:</h5>".$nom."</center></div>
                              <div class='span2'><center><h5>Courriel:</h5>".$courriel."</center></div><div class='span3'><center><h5>Date:</h5>".$date."</center></div>
-                             <div class='span9'><div><center><h5>Sujet:</h5>".$sujet."</center></div></div>";
+                             <div class='span9'><h5>Sujet:</h5>".$sujet."</div>";
                         echo "<textarea style='width: 100%;height: 10%;'>".$proposition."</textarea>";
                         echo"<form action='Administration.php' method='POST'>
                              <center>
