@@ -37,14 +37,17 @@
 
                         <?php
 
-
-
+                            if($_POST['prenom'] && $_POST['nom'] && $_POST['email'])
+                            {
+                                header('Location: Membre_conf.php');
+                            }
+                            else{
                                 echo('
                                       <h2 style="color: #88a65e">Devenir membre vous intéresse?</h2>
                                       </br>
                                       <h4>Le prix de l\'abonnement annuel est de 20$</h4>
-                                      <h4>Pour devenir membre, il suffit de remplir le formulaire suivant et de cliquer sur "Pay with card".
-                                          Par la suite, une validation sera affichée au bas de cette page après avoir payé avec votre carte de crédit.</h4>
+                                      <h4>Pour devenir membre, il suffit de remplir le formulaire suivant et de cliquer sur "Continuer".
+                                          Par la suite, vou pourrez effectuer le paiement par carte de crédit.</h4>
                                       </br>
 
                                       <form action="Membre.php" method="post">
@@ -55,13 +58,14 @@
                                             <b><h4>Adresse email</h4></b>
                                             <input style="height: 30px" type = "text" name="email" size="40">
                                             </br></br>
-                                            <input type="hidden" value="yes" name="valid">
+                                            <input type="submit" value="Continuer" name="continuer"
                                             <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
                                                         data-key="');
                                 echo $stripe['publishable_key'];
                                 echo('" data-description="Abonnement annuel"></script>
                                     </form>
                                     ');
+                            }
                         ?>
                         <p style="color: red;">***Tous les champs sont obligatoire***</p>
 
@@ -85,27 +89,7 @@
                     </center>
                 </div>
 
-                <div class="span12">
-                    <center>
-                        <?php
-                            if($_POST['valid'])
-                            {
-                                $prenom = $_POST['prenom'];
-                                $nom = $_POST['nom'];
-                                $email = $_POST['email'];
 
-                                echo '<h4>Votre abonnement à été complété avec succès avec les informations suivantes : </h4>';
-                                echo '<h4>Prénom : '.$_POST['prenom'].'</h4>';
-                                echo '<h4>Nom : '.$_POST['nom'].'</h4>';
-                                echo '<h4>Adresse email : '.$_POST['email'].'</h4>';
-                                echo '<h4>Merci!</h4>';
-
-                                $query = "INSERT INTO $table (Prenom, Nom, Courriel) VALUES ('$prenom','$nom','$email')";
-                                $result = mysql_query($query);
-                            }
-                        ?>
-                    </center>
-                </div>
 
             </div>
         </div>
@@ -118,21 +102,4 @@ include("Footer.php")
 ?>
 </body>
 </html>
-<?php
-    require_once(dirname(__FILE__) . '/stripe.php');
-
-    $token = $_POST['stripeToken'];
-
-    $customer = Stripe_Customer::create(array(
-    'email' => $email,
-    'card' => $token
-    ));
-
-
-    $charge = Stripe_Charge::create(array(
-    'customer' => $customer->id,
-    'amount' => 2000,
-    'currency' => "cad"
-    ));
-?>
 
