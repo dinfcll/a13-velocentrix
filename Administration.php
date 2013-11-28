@@ -30,12 +30,16 @@ if($_POST['Authentification'])
     if($row < 1)
     {
         echo "<h1 style='color: red;'>Mauvais nom d'utilisateur et/ou mot de passe</h1>";
-        header ("Refresh: 3;URL=Login.php");
+        header ("Refresh: 0;URL=login.php");
+    }
+    else
+    {
+        session_start();
+        $_SESSION['Utilisateur'] = $username;
     }
 }
-else{
-    echo "<h1 style='color: red;'>Vous devez vous connecter</h1>";
-    header ("Refresh: ;URL=login.php");
+elseif(!$_SESSION['Utilisateur']){
+    header ("Refresh: 0;URL=login.php");
 }
 
 ?>
