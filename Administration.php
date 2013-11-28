@@ -30,7 +30,7 @@ if($_POST['Query'] == "Deconnexion")
 if($_POST['Authentification'])
 {
     $username = mysql_real_escape_string($_POST['user']);
-    $password = mysql_real_escape_string($_POST['password']);
+    $password = mysql_real_escape_string(md5($_POST['password']));
     $query ="SELECT * FROM Utilisateurs WHERE Utilisateur='$username' AND Password='$password'";
     $result = mysql_query($query);
     $row = mysql_fetch_array($result);
