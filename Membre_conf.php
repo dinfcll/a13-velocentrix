@@ -35,7 +35,7 @@
                             echo('
                                       <h4>Cliquez sur le bouton "Pay with card" pour effectuer le paiement</h4>
                                       </br>
-                                      <form action="Membre.php" method="post">
+                                      <form action="Membre_conf.php" method="post">
                                       <input type="hidden" name="valid" value="yes">
                                       <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
                                       data-key="'
