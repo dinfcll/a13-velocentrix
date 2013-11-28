@@ -28,6 +28,10 @@
                             $nom = $_POST['nom'];
                             $email = $_POST['email'];
 
+                            echo $prenom;
+                            echo $nom;
+                            echo $email;
+
                             echo('
                                       <h4>Cliquez sur le bouton "Pay with card" pour effectuer le paiement</h4>
                                       </br>
@@ -56,6 +60,28 @@
                             <h1 style="color: #88a65e">_______________</h1>
                             </br>
                             <h4>Des rabais de 10% dans la boutique Louis Garneau</h4>
+                        </center>
+                    </div>
+
+                    <div class="span12">
+                        <center>
+                            <?php
+                            if($_POST['valid'])
+                            {
+                                $prenom = $_POST['prenom'];
+                                $nom = $_POST['nom'];
+                                $email = $_POST['email'];
+
+                                echo '<h4>Votre abonnement à été complété avec succès avec les informations suivantes : </h4>';
+                                echo '<h4>Prénom : '.$_POST['prenom'].'</h4>';
+                                echo '<h4>Nom : '.$_POST['nom'].'</h4>';
+                                echo '<h4>Adresse email : '.$_POST['email'].'</h4>';
+                                echo '<h4>Merci!</h4>';
+
+                                $query = "INSERT INTO $table (Prenom, Nom, Courriel) VALUES ('$prenom','$nom','$email')";
+                                $result = mysql_query($query);
+                            }
+                            ?>
                         </center>
                     </div>
                 </div>

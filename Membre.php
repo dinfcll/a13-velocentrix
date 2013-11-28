@@ -63,6 +63,8 @@
                                     <p style="color: red;">***Tous les champs sont obligatoire***</p>
                                     ');
                             }
+
+                            echo "1";
                         ?>
 
 
@@ -86,27 +88,7 @@
                     </center>
                 </div>
 
-                <div class="span12">
-                    <center>
-                        <?php
-                        if($_POST['valid'])
-                        {
-                            $prenom = $_POST['prenom'];
-                            $nom = $_POST['nom'];
-                            $email = $_POST['email'];
 
-                            echo '<h4>Votre abonnement à été complété avec succès avec les informations suivantes : </h4>';
-                            echo '<h4>Prénom : '.$_POST['prenom'].'</h4>';
-                            echo '<h4>Nom : '.$_POST['nom'].'</h4>';
-                            echo '<h4>Adresse email : '.$_POST['email'].'</h4>';
-                            echo '<h4>Merci!</h4>';
-
-                            $query = "INSERT INTO $table (Prenom, Nom, Courriel) VALUES ('$prenom','$nom','$email')";
-                            $result = mysql_query($query);
-                        }
-                        ?>
-                    </center>
-                </div>
 
 
 
