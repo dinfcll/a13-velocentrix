@@ -12,6 +12,7 @@
 
 <body>
 <?php
+session_start();
 $host = "localhost";
 $user = "equipe2";
 $password = "equipe2abc";
@@ -19,6 +20,33 @@ $bd = "a13equipe2";
 
 mysql_connect($host,$user,$password) or die ("Impossible de se connecter");
 mysql_select_db($bd) or die ("Impossible de se connecter à la base de données");
+
+if($_POST['Query'] == "Deconnexion")
+{
+    session_destroy();
+    header ("Location: login.php");
+}
+
+if($_POST['Authentification'])
+{
+    $username = mysql_real_escape_string($_POST['user']);
+    $password = mysql_real_escape_string(md5($_POST['password']));
+    $query ="SELECT * FROM Utilisateurs WHERE Utilisateur='$username' AND Password='$password'";
+    $result = mysql_query($query);
+    $row = mysql_fetch_array($result);
+    if($row < 1)
+    {
+        header ("Location: login.php");
+    }
+    else
+    {
+        session_start();
+        $_SESSION['Utilisateur'] = $username;
+    }
+}
+elseif(!$_SESSION['Utilisateur']){
+    header ("Location: login.php");
+}
 
 ?>
 <div id="wrap">
@@ -52,7 +80,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     {
                         $table = $_POST['ajoutertable'];
                         $Utilisateur=$_POST['nom'];
-                        $Password = $_POST['passe'];
+                        $Password = md5($_POST['passe']);
                         $query = "INSERT INTO $table (Utilisateur,Password) VALUES ('$Utilisateur','$Password')";
                         mysql_query($query);
                         echo "<center><h3 style='color: green;'>--Ajout Complété--</h3></center>";
@@ -67,7 +95,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     if($_POST['nom'] && $_POST['passe'])
                     {
                         $Utilisateur = $_POST['nom'];
-                        $Password = $_POST['passe'];
+                        $Password = md5($_POST['passe']);
                         $query = "SELECT * FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
                         $result = mysql_query($query);
                         $row = mysql_fetch_array($result);
@@ -91,9 +119,9 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     if($_POST['nom'] && $_POST['ancien'] && $_POST['nouveau'])
                     {
                         $Utilisateur = $_POST['nom'];
-                        $Password = $_POST['ancien'];
-                        $Nouveau = $_POST['nouveau'];
-                        $Confirmation = $_POST['confirmation'];
+                        $Password = md5($_POST['ancien']);
+                        $Nouveau = md5($_POST['nouveau']);
+                        $Confirmation = md5($_POST['confirmation']);
                         if($Nouveau == $Confirmation){
                             $query = "SELECT * FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
                             $result = mysql_query($query);
@@ -154,7 +182,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                  <input style='margin-top: 15px;' class='btn' id='boutonadmin' type='submit' name='modifier' value='Modifier le mot de passe'/>
                  </form></div></div>";
             }
-            elseif($_POST['Query'] == "Proposition"){
+            elseif($_POST['Query'] == "Proposition" || $_POST['Action']){
                 $query = "SELECT * FROM Proposition";
                 $result = mysql_query($query);
                 $row = mysql_fetch_array($result);
@@ -162,9 +190,38 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     $result = mysql_query($query);
                 echo "<div class='span9'>
                 <form action='Administration.php' method='POST'>";
-                 echo "<h5> Listes des propositions:</h5><select style='width: 100%;' name='proposition'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idProposition']."'>"."<strong>Prénom:</strong>".$row['Prenom']."  Nom:".$row['Nom']."  Courriel".$row['Courriel']."  Sujet:".$row['Sujet']."</option>";} echo "</select>";
-
-                 echo "<center><input class='btn' type='submit' name='Action' value='Consulter la proposition'></center>
+                 if(!$_POST['Suppression']){echo "<h5> Listes des propositions:</h5><select style='width: 100%;' name='proposition'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idProposition']."'>"."<strong>Prénom:</strong>".$row['Prenom']."  Nom:".$row['Nom']."  Date:".$row['Temps']."  Sujet:".$row['Sujet']."</option>";} echo "</select>";}
+                    if($_POST['Action'] && !$_POST['Suppression']){
+                        $id = $_POST['proposition'];
+                        $query = "SELECT * FROM Proposition WHERE idProposition='$id'";
+                        $result = mysql_query($query);
+                        $row = mysql_fetch_array($result);
+                        $nom = $row['Nom'];
+                        $prenom = $row['Prenom'];
+                        $sujet = $row['Sujet'];
+                        $date = $row['Temps'];
+                        $proposition = $row['Proposition'];
+                        $courriel = $row['Courriel'];
+                        echo"<div class='span2'><center><h5>Prenom:</h5>".$prenom."</center></div><div class='span2'><center><h5>Nom:</h5>".$nom."</center></div>
+                             <div class='span2'><center><h5>Courriel:</h5>".$courriel."</center></div><div class='span3'><center><h5>Date:</h5>".$date."</center></div>
+                             <div class='span9'><h5>Sujet:</h5>".$sujet."</div>";
+                        echo "<textarea style='width: 100%;height: 10%;'>".$proposition."</textarea>";
+                        echo"<form action='Administration.php' method='POST'>
+                             <center>
+                             <input type='hidden' name='Suppression' value='".$id."'/>
+                             <input class='btn' id='boutonadmin' style='margin-bottom: 30px;' type='submit' name='Action' value='Supprimer la proposition'/></center></form>";
+                    }
+                    elseif($_POST['Action'])
+                    {
+                        $id = $_POST['Suppression'];
+                        $query="DELETE FROM Proposition WHERE idProposition='$id'";
+                        mysql_query($query);
+                        $query = "SELECT * FROM Proposition";
+                        $result = mysql_query($query);
+                        echo "<h5> Listes des propositions:</h5><select style='width: 100%;' name='proposition'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idProposition']."'>"."<strong>Prénom:</strong>".$row['Prenom']."  Nom:".$row['Nom']."  Date:".$row['Temps']."  Sujet:".$row['Sujet']."</option>";} echo "</select>";
+                        echo "<center><h5 style='color: green;'>Proposition supprimée avec succès!</h5></center>";
+                    }
+                 echo "<center><input class='btn' id='boutonadmin' type='submit' name='Action' value='Consulter la proposition'/></center></form>
                  </div>";
                 }
                 else{
@@ -237,6 +294,10 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         <center><h5><font color='white'>Propositions</font></h5></center>
                     </div>
                     <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Proposition'/><input class='btn' id='boutonadmin' type='submit' name='Consultation' value='Consulter les propositions'/></form><br/>
+                    <div id='deconnexion'>
+                        <center><h5><font color='white'>Déconnexion</font></h5></center>
+                    </div>
+                    <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Deconnexion'/><input class='btn' id='boutonadmin' type='submit' name='Deconnexion' value='Déconnexion'/></form><br/>
                     <?php if($_POST['Query'] && $_POST['Query'] != "Gestion des accès administrateurs" && $_POST['Query'] != "Proposition")
                     {
                         echo "<h5>Quoi modifier ?</h5>";
