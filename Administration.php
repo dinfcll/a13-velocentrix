@@ -80,7 +80,7 @@ elseif(!$_SESSION['Utilisateur']){
                     {
                         $table = $_POST['ajoutertable'];
                         $Utilisateur=$_POST['nom'];
-                        $Password = $_POST['passe'];
+                        $Password = md5($_POST['passe']);
                         $query = "INSERT INTO $table (Utilisateur,Password) VALUES ('$Utilisateur','$Password')";
                         mysql_query($query);
                         echo "<center><h3 style='color: green;'>--Ajout Complété--</h3></center>";
@@ -95,7 +95,7 @@ elseif(!$_SESSION['Utilisateur']){
                     if($_POST['nom'] && $_POST['passe'])
                     {
                         $Utilisateur = $_POST['nom'];
-                        $Password = $_POST['passe'];
+                        $Password = md5($_POST['passe']);
                         $query = "SELECT * FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
                         $result = mysql_query($query);
                         $row = mysql_fetch_array($result);
@@ -119,8 +119,8 @@ elseif(!$_SESSION['Utilisateur']){
                     if($_POST['nom'] && $_POST['ancien'] && $_POST['nouveau'])
                     {
                         $Utilisateur = $_POST['nom'];
-                        $Password = $_POST['ancien'];
-                        $Nouveau = $_POST['nouveau'];
+                        $Password = md5($_POST['ancien']);
+                        $Nouveau = md5($_POST['nouveau']);
                         $Confirmation = $_POST['confirmation'];
                         if($Nouveau == $Confirmation){
                             $query = "SELECT * FROM $table WHERE Utilisateur='$Utilisateur' AND Password='$Password'";
