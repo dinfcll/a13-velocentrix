@@ -162,7 +162,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     $result = mysql_query($query);
                 echo "<div class='span9'>
                 <form action='Administration.php' method='POST'>";
-                 echo "<h5> Listes des propositions:</h5><select style='width: 100%;' name='proposition'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idProposition']."'>"."<strong>Prénom:</strong>".$row['Prenom']."  Nom:".$row['Nom']."  Date:".$row['Temps']."  Sujet:".$row['Sujet']."</option>";} echo "</select>";
+                 if(!$_POST['Suppression']){echo "<h5> Listes des propositions:</h5><select style='width: 100%;' name='proposition'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idProposition']."'>"."<strong>Prénom:</strong>".$row['Prenom']."  Nom:".$row['Nom']."  Date:".$row['Temps']."  Sujet:".$row['Sujet']."</option>";} echo "</select>";}
                     if($_POST['Action'] && !$_POST['Suppression']){
                         $id = $_POST['proposition'];
                         $query = "SELECT * FROM Proposition WHERE idProposition='$id'";
@@ -186,8 +186,11 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                     elseif($_POST['Action'])
                     {
                         $id = $_POST['Supression'];
-                        $query="DELETE * FROM Proposition WHERE idProposition='$id'";
+                        $query="DELETE FROM Proposition WHERE idProposition='$id'";
                         mysql_query($query);
+                        $query = "SELECT * FROM Proposition";
+                        $result = mysql_query($query);
+                        echo "<h5> Listes des propositions:</h5><select style='width: 100%;' name='proposition'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idProposition']."'>"."<strong>Prénom:</strong>".$row['Prenom']."  Nom:".$row['Nom']."  Date:".$row['Temps']."  Sujet:".$row['Sujet']."</option>";} echo "</select>";
                         echo "<center><h5 style='color: green;'>Proposition supprimée avec succès!</h5></center>";
                     }
                  echo "<center><input class='btn' id='boutonadmin' type='submit' name='Action' value='Consulter la proposition'></center></form>
