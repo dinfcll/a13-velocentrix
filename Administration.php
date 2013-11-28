@@ -154,7 +154,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                  <input style='margin-top: 15px;' class='btn' id='boutonadmin' type='submit' name='modifier' value='Modifier le mot de passe'/>
                  </form></div></div>";
             }
-            elseif($_POST['Query'] == "Proposition"){
+            elseif($_POST['Query'] == "Proposition" || $_POST['Action']){
                 $query = "SELECT * FROM Proposition";
                 $result = mysql_query($query);
                 $row = mysql_fetch_array($result);
