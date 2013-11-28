@@ -12,6 +12,7 @@
 
 <body>
 <?php
+session_start();
 $host = "localhost";
 $user = "equipe2";
 $password = "equipe2abc";
@@ -43,8 +44,6 @@ if($_POST['Authentification'])
     }
 }
 elseif(!$_SESSION['Utilisateur']){
-    echo "erreur";
-    echo $_SESSION['Utilisateur'];
     header ("Refresh: 0;URL=login.php");
 }
 
