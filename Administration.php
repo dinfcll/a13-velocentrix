@@ -24,7 +24,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
 if($_POST['Query'] == "Deconnexion")
 {
     session_destroy();
-    http_redirect("login.php");
+    header ("Refresh: 0;URL=login.php");
 }
 
 if($_POST['Authentification'])
