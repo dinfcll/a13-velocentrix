@@ -14,6 +14,9 @@
     <body>
     <div id="wrap">
         <div class="container-fluid">
+            <?php
+            include("Header.html");
+            ?>
 
             <div class="contenu border-radius">
                 <div class="row-fluid">
@@ -21,18 +24,22 @@
                         <center>
                             <?php
 
-
+                            $prenom = $_POST['prenom'];
+                            $nom = $_POST['nom'];
+                            $email = $_POST['email'];
 
                             echo('
                                       <h4>Cliquez sur le bouton "Pay with card" pour effectuer le paiement</h4>
                                       </br>
                                       <form action="Membre.php" method="post">
-                                            <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-                                                        data-key="');
+                                      <input type="hidden" name="valid" value="yes">
+                                      <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                                      data-key="'
+                                );
                             echo $stripe['publishable_key'];
-                            echo('" data-description="Abonnement annuel"></script>
-                                    </form>
-                                    ');
+                            echo('    " data-description="Abonnement annuel"></script>
+                                      </form>
+                                ');
                             ?>
                         </center>
 
@@ -51,31 +58,6 @@
                             <h4>Des rabais de 10% dans la boutique Louis Garneau</h4>
                         </center>
                     </div>
-
-                    <div class="span12">
-                        <center>
-                            <?php
-                            if($_POST['valid'])
-                            {
-                                $prenom = $_POST['prenom'];
-                                $nom = $_POST['nom'];
-                                $email = $_POST['email'];
-
-                                echo '<h4>Votre abonnement à été complété avec succès avec les informations suivantes : </h4>';
-                                echo '<h4>Prénom : '.$_POST['prenom'].'</h4>';
-                                echo '<h4>Nom : '.$_POST['nom'].'</h4>';
-                                echo '<h4>Adresse email : '.$_POST['email'].'</h4>';
-                                echo '<h4>Merci!</h4>';
-
-                                $query = "INSERT INTO $table (Prenom, Nom, Courriel) VALUES ('$prenom','$nom','$email')";
-                                $result = mysql_query($query);
-                            }
-                            ?>
-                        </center>
-                    </div>
-
-
-
                 </div>
             </div>
             l
@@ -87,20 +69,4 @@
     ?>
     </body>
     </html>
-    <?php
-    require_once(dirname(__FILE__) . '/stripe.php');
 
-    $token = $_POST['stripeToken'];
-
-    $customer = Stripe_Customer::create(array(
-        'email' => $email,
-        'card' => $token
-    ));
-
-
-    $charge = Stripe_Charge::create(array(
-        'customer' => $customer->id,
-        'amount' => 2000,
-        'currency' => "cad"
-    ));
-    ?>
