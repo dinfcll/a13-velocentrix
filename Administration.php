@@ -163,7 +163,20 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                 echo "<div class='span9'>
                 <form action='Administration.php' method='POST'>";
                  echo "<h5> Listes des propositions:</h5><select style='width: 100%;' name='proposition'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idProposition']."'>"."<strong>Prénom:</strong>".$row['Prenom']."  Nom:".$row['Nom']."  Date:".date_timestamp_get($row['Temps'])."  Sujet:".$row['Sujet']."</option>";} echo "</select>";
-
+                    if($_POST['Action']){
+                        $id = $_POST['proposition'];
+                        $query = "SELECT * FROM Proposition WHERE idProposition='$id'";
+                        $result = mysql_query($query);
+                        $row = mysql_fetch_array($result);
+                        $nom = $row['Nom'];
+                        $prenom = $row['Prenom'];
+                        $sujet = $row['Sujet'];
+                        $date = date_timestamp_get($row['Temps']);
+                        $proposition = $row['Proposition'];
+                        echo"<center><h5>Prenom:</h5>".$prenom."<h5>Nom:</h5>".$nom."</center>
+                             <center><h5>Sujet:</h5>".$sujet."<h5>Date:</h5>".$date."</center>";
+                        echo "<textarea style='width: 100%;'>".$proposition."</textarea>";
+                    }
                  echo "<center><input class='btn' id='boutonadmin' type='submit' name='Action' value='Consulter la proposition'></center>
                  </div>";
                 }
