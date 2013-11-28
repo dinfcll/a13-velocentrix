@@ -58,7 +58,7 @@
                                             <b><h4>Adresse email</h4></b>
                                             <input style="height: 30px" type = "text" name="email" size="40">
                                             </br></br>
-                                            <button type="button" class="btn btn-primary" value="Continuer">
+                                            <button type="button" class="btn btn-primary" value="Continuer"></button>
                                     </form>
                                     <p style="color: red;">***Tous les champs sont obligatoire***</p>
                                     ');
@@ -123,19 +123,23 @@ include("Footer.php")
 </html>
 
 <?php
-require_once(dirname(__FILE__) . '/stripe.php');
+    if($_POST['valid'])
+    {
+        require_once(dirname(__FILE__) . '/stripe.php');
 
-$token = $_POST['stripeToken'];
+        $token = $_POST['stripeToken'];
 
-$customer = Stripe_Customer::create(array(
-    'email' => $email,
-    'card' => $token
-));
+        $customer = Stripe_Customer::create(array(
+            'email' => $email,
+            'card' => $token
+        ));
 
 
-$charge = Stripe_Charge::create(array(
-    'customer' => $customer->id,
-    'amount' => 2000,
-    'currency' => "cad"
-));
+        $charge = Stripe_Charge::create(array(
+            'customer' => $customer->id,
+            'amount' => 2000,
+            'currency' => "cad"
+        ));
+    }
+
 ?>
