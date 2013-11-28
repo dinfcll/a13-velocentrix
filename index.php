@@ -71,7 +71,7 @@
                 </div>
                 <div class="row-fluid">
                     <div class="span12">
-                        <center><p>Évenement à ne pas manquer</p>
+                        <center><p>Événement à ne pas manquer</p>
                         <a href="Inscription.php"><button type="button" class="btn btn-primary"><i class="icon-road icon-large">Inscription</i></button></a>
                         </center>
                     </div>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="row-fluid">
                     <div class="span12">
-                        <center><p>Évenement à ne pas manquer</p>
+                        <center><p>Événement à ne pas manquer</p>
                         <a href="Inscription.php"><button type="button" class="btn btn-primary"><i class="icon-road icon-large">Inscription</i></button></a>
                         </center>
                     </div>
