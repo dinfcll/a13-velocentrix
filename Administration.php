@@ -180,8 +180,8 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         echo "<textarea style='width: 100%;height: 10%;'>".$proposition."</textarea>";
                         echo"<form action='Administration.php' method='POST'>
                              <center>
-                             <input type='hidden' name='Suppression' value='".$id."'>
-                             <input class='btn' id='boutonadmin' style='margin-bottom: 30px;' type='submit' name='Action' value='Supprimer la proposition'></center></form>";
+                             <input type='hidden' name='Suppression' value='".$id."'/>
+                             <input class='btn' id='boutonadmin' style='margin-bottom: 30px;' type='submit' name='Action' value='Supprimer la proposition'/></center></form>";
                     }
                     elseif($_POST['Action'])
                     {
@@ -193,7 +193,7 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
                         echo "<h5> Listes des propositions:</h5><select style='width: 100%;' name='proposition'>";while($row = mysql_fetch_array($result)){echo"<option value='".$row['idProposition']."'>"."<strong>Prénom:</strong>".$row['Prenom']."  Nom:".$row['Nom']."  Date:".$row['Temps']."  Sujet:".$row['Sujet']."</option>";} echo "</select>";
                         echo "<center><h5 style='color: green;'>Proposition supprimée avec succès!</h5></center>";
                     }
-                 echo "<center><input class='btn' id='boutonadmin' type='submit' name='Action' value='Consulter la proposition'></center></form>
+                 echo "<center><input class='btn' id='boutonadmin' type='submit' name='Action' value='Consulter la proposition'/></center></form>
                  </div>";
                 }
                 else{
