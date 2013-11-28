@@ -22,14 +22,13 @@ mysql_select_db($bd) or die ("Impossible de se connecter à la base de données"
 
 if($_POST['Authentification'])
 {
-    $username = $_POST['user'];
-    $password = $_POST['password'];
-    $query = mysql_real_escape_string("SELECT * FROM Utilisateurs WHERE Utilisateur='$username' AND Password='$password'");
+    $username = mysql_real_escape_string($_POST['user']);
+    $password = mysql_real_escape_string($_POST['password']);
+    $query ="SELECT * FROM Utilisateurs WHERE Utilisateur='$username' AND Password='$password'";
     $result = mysql_query($query);
     $row = mysql_fetch_array($result);
     if($row < 1)
     {
-        echo "<h1 style='color: red;'>Mauvais nom d'utilisateur et/ou mot de passe</h1>";
         header ("Refresh: 0;URL=login.php");
     }
     else
