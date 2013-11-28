@@ -20,6 +20,11 @@ $bd = "a13equipe2";
 mysql_connect($host,$user,$password) or die ("Impossible de se connecter");
 mysql_select_db($bd) or die ("Impossible de se connecter à la base de données");
 
+if($_POST['Query'] == "Deconnexion")
+{
+    session_destroy();
+}
+
 if($_POST['Authentification'])
 {
     $username = mysql_real_escape_string($_POST['user']);
@@ -287,6 +292,10 @@ elseif(!$_SESSION['Utilisateur']){
                         <center><h5><font color='white'>Propositions</font></h5></center>
                     </div>
                     <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Proposition'/><input class='btn' id='boutonadmin' type='submit' name='Consultation' value='Consulter les propositions'/></form><br/>
+                    <div id='deconnexion'>
+                        <center><h5><font color='white'>Déconnexion</font></h5></center>
+                    </div>
+                    <form action='Administration.php' method='POST'><input  type='hidden' name='Query' value='Deconnexion'/><input class='btn' id='boutonadmin' type='submit' name='Deconnexion' value='Déconnexion'/></form><br/>
                     <?php if($_POST['Query'] && $_POST['Query'] != "Gestion des accès administrateurs" && $_POST['Query'] != "Proposition")
                     {
                         echo "<h5>Quoi modifier ?</h5>";
