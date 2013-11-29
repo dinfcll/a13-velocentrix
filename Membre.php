@@ -1,5 +1,3 @@
-<?php require_once('./stripe.php'); ?>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -37,11 +35,7 @@
 
                         <?php
 
-                            if($_POST['prenom'] && $_POST['nom'] && $_POST['email'])
-                            {
-                                header('Location: Membre_conf.php');
-                            }
-                            else{
+
                                 echo('
                                       <h2 style="color: #88a65e">Devenir membre vous intéresse?</h2>
                                       </br>
@@ -50,7 +44,7 @@
                                           Par la suite, vou pourrez effectuer le paiement par carte de crédit.</h4>
                                       </br>
 
-                                      <form action="Membre.php" method="post">
+                                      <form action="Membre_conf.php" method="post">
                                             <b><h4>Prénom</h4></b>
                                             <input style="height: 30px" type="text" name="prenom" size = "40">
                                             <b><h4>Nom</b></h4>
@@ -62,9 +56,9 @@
                                     </form>
                                     <p style="color: red;">***Tous les champs sont obligatoire***</p>
                                     ');
-                            }
 
-                            echo "1";
+
+                            echo "2";
                         ?>
 
 
@@ -94,7 +88,6 @@
 
             </div>
         </div>
-l
     </div>
     <div id="push"></div>
 </div>
