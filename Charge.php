@@ -35,6 +35,10 @@
 
                     <?php
 
+                    $prenom = $_POST['prenom'];
+                    $nom = $_POST['nom'];
+                    $email = $_POST['email'];
+
                     $token = $_POST['stripeToken'];
 
                     $customer = Stripe_Customer::create(array(
@@ -49,9 +53,7 @@
                         'currency' => "cad"
                     ));
 
-                    $prenom = $_POST['prenom'];
-                    $nom = $_POST['nom'];
-                    $email = $_POST['email'];
+
 
 
                     echo '<h4>Votre abonnement à été complété avec succès avec les informations suivantes : </h4>';

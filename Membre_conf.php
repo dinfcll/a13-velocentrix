@@ -1,4 +1,4 @@
-<?php require_once('./stripe.php'); ?>
+<?php require_once('stripe.php'); ?>
 
     <html>
     <head>
