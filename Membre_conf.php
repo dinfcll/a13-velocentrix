@@ -35,7 +35,7 @@
                     <div class="span6">
                         <center>
                             <?php
-                            if(!$_POST['prenom'] && !$_POST['nom'] && !$_POST['email'])
+                            if(!$_POST['prenom'] || !$_POST['nom'] || !$_POST['email'])
                             {
                                 header('Location: Membre.php');
                             }
