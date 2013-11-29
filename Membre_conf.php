@@ -62,7 +62,7 @@
                         <center>
                             <h2 style="color: #88a65e">Les avantages d'être membre de Vélocentrix</h2>
                             </br>
-                            <h4>Des prix réduits sur les activités organisée pas Vélocentrix</h4>
+                            <h4>Des prix réduits sur les activités organisées par Vélocentrix</h4>
                             <h1 style="color: #88a65e">_______________</h1>
                             </br>
                             <h4>L'accès à l'atelier gratuitement durant les heures d'ouvertures</h4>

@@ -38,7 +38,7 @@
                                       </br>
                                       <h4>Le prix de l\'abonnement annuel est de 20$</h4>
                                       <h4>Pour devenir membre, il suffit de remplir le formulaire suivant et de cliquer sur "Continuer".
-                                          Par la suite, vou pourrez effectuer le paiement par carte de crédit.</h4>
+                                          Par la suite, vous pourrez effectuer le paiement par carte de crédit.</h4>
                                       </br>
 
                                       <form action="Membre_conf.php" method="post">
@@ -61,7 +61,7 @@
                     <center>
                         <h2 style="color: #88a65e">Les avantages d'être membre de Vélocentrix</h2>
                         </br>
-                        <h4>Des prix réduits sur les activités organisée pas Vélocentrix</h4>
+                        <h4>Des prix réduits sur les activités organisées par Vélocentrix</h4>
                         <h1 style="color: #88a65e">_______________</h1>
                         </br>
                         <h4>L'accès à l'atelier gratuitement durant les heures d'ouvertures</h4>

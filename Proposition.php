@@ -49,7 +49,7 @@
                         <form action="Proposition.php" method="POST">
                             <center>
                                 <h4>
-                                    Prenom : <input style="height: 28" type="text" name="prenom">
+                                    Prénom : <input style="height: 28" type="text" name="prenom">
                                     Nom : <input style="height: 28" type="text" name="nom">
                                 </h4>
                                 <h4> Courriel : <input style="height: 28; width:475px" type="text" name="email"></h4>
