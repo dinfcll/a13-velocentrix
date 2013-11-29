@@ -32,10 +32,7 @@
             <div class="row-fluid">
                 <div class="span6">
                     <center>
-
                         <?php
-
-
                                 echo('
                                       <h2 style="color: #88a65e">Devenir membre vous intéresse?</h2>
                                       </br>
@@ -56,16 +53,9 @@
                                     </form>
                                     <p style="color: red;">***Tous les champs sont obligatoire***</p>
                                     ');
-
-
                             echo "4";
                         ?>
-
-
                     </center>
-
-
-
                 </div>
 
                 <div class="span6">
@@ -81,11 +71,6 @@
                         <h4>Des rabais de 10% dans la boutique Louis Garneau</h4>
                     </center>
                 </div>
-
-
-
-
-
             </div>
         </div>
     </div>

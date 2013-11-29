@@ -48,12 +48,9 @@
                                           <input type="hidden" name="prenom" value="'.$_POST['nom'].'"/>
                                           <input type="hidden" name="email" value="'.$_POST['email'].'"/>
                                           <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-                                          data-key="'
+                                          data-key="'.$stripe['publishable_key'].'"data-description="Abonnement annuel"></script>
+                                          </form>'
                                     );
-                                echo $stripe['publishable_key'];
-                                echo('    " data-description="Abonnement annuel"></script>
-                                          </form>
-                                    ');
                             }
                             ?>
                         </center>
