@@ -53,7 +53,6 @@
                                     </form>
                                     <p style="color: red;">***Tous les champs sont obligatoire***</p>
                                     ');
-                            echo "4";
                         ?>
                     </center>
                 </div>
