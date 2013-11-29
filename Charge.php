@@ -52,16 +52,19 @@
                         'currency' => "cad"
                     ));
 
-                    echo '<h4>Votre abonnement à été complété avec succès avec les informations suivantes : </h4>';
+                    echo'<center>';
+                    echo '<h4 style="color: #88a65e">Votre abonnement à été complété avec succès avec les informations suivantes : </h4>';
                     echo '<h4>Prénom : '.$_POST['prenom'].'</h4>';
                     echo '<h4>Nom : '.$_POST['nom'].'</h4>';
                     echo '<h4>Adresse email : '.$_POST['email'].'</h4>';
                     echo '<h4>Merci!</h4>';
+                    echo '<h4 style="color: #88a65e">Vous serez redirigé dans quelque instant vers la page d\'accueil.</h4>';
+                    echo'</center>';
 
                     $query = "INSERT INTO $table (Prenom, Nom, Courriel) VALUES ('$prenom','$nom','$email')";
                     $result = mysql_query($query);
 
-                    header( "refresh:3;url=Accueil.php" );
+                    header( "refresh:7;url=Accueil.php" );
                     ?>
 
                 </div>

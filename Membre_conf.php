@@ -41,6 +41,7 @@
                             }
                             else{
                                 echo('
+                                          </br></br></br>
                                           <h4>Cliquez sur le bouton "Pay with card" pour effectuer le paiement</h4>
                                           </br>
                                           <form action="Charge.php" method="post">
@@ -67,7 +68,7 @@
                             <h4>L'accès à l'atelier gratuitement durant les heures d'ouvertures</h4>
                             <h1 style="color: #88a65e">_______________</h1>
                             </br>
-                            <h4>Des rabais de 10% dans la boutique Louis Garneau</h4>
+                            <h4>Avantage numéro 3</h4>
                         </center>
                     </div>
                 </div>
